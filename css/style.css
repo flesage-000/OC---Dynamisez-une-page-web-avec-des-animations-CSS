@@ -1,9 +1,20 @@
+/* Gradient link : https://www.css-gradient.com/?c1=f184dc&c2=9d5adc&gt=l&gd=dbl */
+
 /* Generics: Variables */
 :root {
   --clr-primary: #9356DC;
   --clr-secondary: #FF79DA;
   --clr-ternary: #99E2D0;
+  --clr-quaternary: #EAEAEA;
+  --clr-quinary: #CFCFCF;
+  --clr-senary: #353535;
+  --clr-septenary: #F6F6F6;
+  --clr-octonary: #9C9C9C;
+  --clr-nonary: #008766;
+  --clr-decenary: #F5EDFF;
+  --clr-undenary: #E6E6E6;
   --clr-black: #000;
+  --clr-light-black: #101010;
   --clr-white: #FFF;
 }
 
@@ -14,20 +25,59 @@ body {
   min-height: 100%;
 }
 
-/* Generics Styles : favorite restaurant */
-.favorite {
-  height: 50px;
-  width: 50px;
-  font-size: 20px
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+.card-list .card {}
+.card-list .illustration {
+  height: 175px;
+  position: relative;
+}
+.card-list .illustration span {
+  display: none;
+}
+.card-list .isNew .illustration span {
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+.card-list .description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.card-list .description .text {
+  flex: 0 0 calc(100% - 75px);
+
+  padding: 16px 12px;
+}
+.card-list .description .favorite {
+  flex: 1 0 75px;
+  position: relative;
+}
+
+/* Generics Styles : favorite restaurant */
+.favorite {}
 .favorite [class*="fa-"] {
   display: none;
 }
 .favorite input {}
 
-.favorite input:checked + .fa-solid,
-.favorite input:not(:checked) + .fa-regular {
+.favorite input:checked ~ .fa-solid,
+.favorite:hover input:not(:checked) ~ .fa-solid,
+.favorite input:not(:checked) ~ .fa-regular {
   display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.favorite:hover input:not(:checked) ~ .fa-regular {
+  display: none;
 }
 
 /* Generics Styles :  */
@@ -41,12 +91,11 @@ footer {
   flex-wrap: nowrap;
 }
 header,
-form,
 .explore,
 .howTo,
 main {
-  margin-right: 20px;
-  margin-left: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 /* Generics Styles : .main */
@@ -60,7 +109,7 @@ header {
   flex-direction: column;
   justify-content: center;
 
-  height: 63px;
+  padding: 22px 0 7px;
 }
 
 /* Generics Styles : form */
@@ -75,13 +124,12 @@ form i {
 }
 form input[type="search"] {
   width: 50%;
-  margin-right: 18px;
 }
 
 /* Generics Styles : .explore */
 .explore {
-  margin-top: 42px;
-  margin-bottom: 42px;
+  padding-top: 42px;
+  padding-bottom: 42px;
 }
 .explore h2 {
   margin-bottom: 18px;
@@ -91,12 +139,13 @@ form input[type="search"] {
 }
 .explore button {
   margin-bottom: 13px;
+  padding: 18px 22px;
 }
 
 /* Generics Styles : .howTo */
 .howTo {
-  margin-top: 53px;
-  margin-bottom: 46px;
+  padding-top: 53px;
+  padding-bottom: 46px;
   flex-direction: column;
   align-items: stretch;
   counter-reset: li;
@@ -104,13 +153,16 @@ form input[type="search"] {
 .howTo h2 {
   margin-bottom: 27px;
 }
+.howTo li:not(:last-child) {
+  margin-bottom: 20px;
+}
 .howTo li {
   align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  margin-bottom: 22px;
+  padding-bottom: 22px;
   height: 75px;
   gap: 30px;
   padding: 0 33px;
@@ -134,8 +186,8 @@ form input[type="search"] {
 /* Generics Styles : main */
 main {
   flex-direction: column;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 main h2 {
   margin-bottom: 24px;
@@ -144,7 +196,28 @@ main h2 {
 /* Generics Styles : footer */
 footer {
   flex-direction: column;
-  margin: 26px 25px 36px;
+  padding: 25px;
+}
+footer h5 {
+  margin-bottom: 20px;
+}
+footer li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+footer li:not(:last-child) {
+  margin-bottom: 8px;
+}
+footer li i {
+  flex: 0 0 25px;
+  position: relative;
+}
+footer li i:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 
@@ -153,26 +226,159 @@ footer {
 
 
 
+/* Template : generics */
+.tpl {
+  font-family: 'Roboto', sans-serif;
+  color: var(--clr-black)
+}
+.tpl h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+.tpl .title-special {
+  font-family: 'Shrikhand', cursive;
+  font-size: 19px;
+}
+.tpl .shadowed {
+  box-shadow: 0 10px 10px var(--clr-undenary);
+}
+.tpl .favorite,
+.tpl label,
+.tpl button {
+  cursor: pointer;
+}
+/* Template : card */
+.tpl .card {
+  border-radius: 19px;
+  overflow: hidden;
+}
+.tpl .card-list .illustration {
+  background-position: center;
+  background-size: cover;
+}
+.tpl .card.isNew .illustration span {
+  background-color: var(--clr-ternary);color: var(--clr-nonary);
+  font-size: 14px;
+  font-weight: 500;
+}
+.tpl .card a {
+  font-size: 18px;
+  font-weight: 700;
+}
+.tpl .card p {
+  /* font-size: 18px; */
+  font-weight: 300;
+}
+.tpl .card-list .favorite {}
 /* Template : favorite restaurant */
-.favorite {}
+.tpl .favorite {
+  font-size: 20px;
+}
+.tpl .favorite:hover i:before,
+.tpl .favorite input:checked ~ i:before {
+  /* Created with https://www.css-gradient.com */
+  background: #F184DC;
+  background: -webkit-linear-gradient(bottom left, #F184DC, #9D5ADC);
+  background: -moz-linear-gradient(bottom left, #F184DC, #9D5ADC);
+  background: linear-gradient(to top right, #F184DC, #9D5ADC);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
 /* Template : .main */
-.main {}
+.tpl .main {}
 
 /* Template : header */
-header {}
+.tpl header svg {
+  fill: var(--clr-light-black);
+}
 
 /* Template : form */
-form {}
+.tpl form {
+  background-color: var(--clr-quaternary);
+  box-shadow: inset 0 5px 5px var(--clr-quinary);
+}
+.tpl form input[type="search"] {
+  font-weight: 500;
+}
 
 /* Template : .explore */
-.explore {}
+.tpl .explore {
+  background-color: var(--clr-septenary);
+  text-align: center;
+}
+.tpl .explore p {
+  font-size: 17px;
+  font-weight: 300;
+}
+.tpl .explore button {
+  background-color: var(--clr-primary);
+  border-radius: 28px;
+  color: var(--clr-white);
+  font-size: 17px;
+  font-weight: 400;
+  /* Created with https://www.css-gradient.com */
+  background: #F184DC;
+  background: -webkit-linear-gradient(top left, #F184DC, #9D5ADC);
+  background: -moz-linear-gradient(top left, #F184DC, #9D5ADC);
+  background: linear-gradient(to bottom right, #F184DC, #9D5ADC);
+}
 
 /* Template : .howTo */
-.howTo {}
+.tpl .howTo {}
+.tpl .howTo li {
+  background-color: var(--clr-septenary);
+  border-radius: 18px;
+}
+.tpl .howTo li:before {
+  background-color: var(--clr-primary);
+  border-radius: 50%;
+  color: var(--clr-white);
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+}
+.tpl .howTo li.current {
+  background-color: var(--clr-decenary);
+}
+.tpl .howTo i {
+  color: var(--clr-octonary);
+  font-size: 18px;
+}
+.tpl .howTo .current i {
+  color: var(--clr-primary);
+}
+.tpl .howTo span {
+  font-weight: 700;
+}
 
 /* Template : main */
-main {}
+.tpl main {
+  background-color: var(--clr-septenary);
+}
 
 /* Template : footer */
-footer {}
+.tpl footer {
+  background-color: var(--clr-senary);
+  color: var(--clr-white);
+}
+.tpl footer li {
+  font-size: 16px;
+}
+.tpl footer i {
+  font-size: 14px;
+}
+
+/* Template : restaurants */
+.card.la-palette-du-gout .illustration {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg)
+}
+.card.la-note-enchantee .illustration {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg)
+}
+.card.a-la-francaise .illustration {
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg)
+}
+.card.le-delice-des-sens .illustration {
+  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg)
+}
