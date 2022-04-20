@@ -1,0 +1,15 @@
+/* Generics Styles : favorite restaurant */
+.favorite {
+  height: 50px;
+  width: 50px;
+  font-size: 20px
+}
+.favorite [class*="fa-"] {
+  display: none;
+}
+.favorite input {}
+
+.favorite input:checked + .fa-solid,
+.favorite input:not(:checked) + .fa-regular {
+  display: block;
+}
