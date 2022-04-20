@@ -1,3 +1,19 @@
+/* Generics: Variables */
+:root {
+  --clr-primary: #9356DC;
+  --clr-secondary: #FF79DA;
+  --clr-ternary: #99E2D0;
+  --clr-black: #000;
+  --clr-white: #FFF;
+}
+
+/* Generics Styles : window + body */
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
 /* Generics Styles : favorite restaurant */
 .favorite {
   height: 50px;
@@ -13,3 +29,150 @@
 .favorite input:not(:checked) + .fa-regular {
   display: block;
 }
+
+/* Generics Styles :  */
+.main,
+header,
+form,
+.howTo,
+main,
+footer {
+  display: flex;
+  flex-wrap: nowrap;
+}
+header,
+form,
+.explore,
+.howTo,
+main {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/* Generics Styles : .main */
+.main {
+  flex-direction: column;
+}
+
+/* Generics Styles : header */
+header {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 63px;
+}
+
+/* Generics Styles : form */
+form {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+form i {
+  margin: 0 18px;
+}
+form input[type="search"] {
+  width: 50%;
+  margin-right: 18px;
+}
+
+/* Generics Styles : .explore */
+.explore {
+  margin-top: 42px;
+  margin-bottom: 42px;
+}
+.explore h2 {
+  margin-bottom: 18px;
+}
+.explore p {
+  margin-bottom: 32px;
+}
+.explore button {
+  margin-bottom: 13px;
+}
+
+/* Generics Styles : .howTo */
+.howTo {
+  margin-top: 53px;
+  margin-bottom: 46px;
+  flex-direction: column;
+  align-items: stretch;
+  counter-reset: li;
+}
+.howTo h2 {
+  margin-bottom: 27px;
+}
+.howTo li {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-bottom: 22px;
+  height: 75px;
+  gap: 30px;
+  padding: 0 33px;
+  position: relative;
+}
+.howTo li:before {
+  position: absolute;
+  counter-increment: li;
+  content: counter(li);
+  height: 24px;
+  width: 24px;
+  left: -5px;
+}
+.howTo i {
+  /* flex: 1 1 75px; */
+}
+.howTo span {
+  /* flex: 0 1 100%; */
+}
+
+/* Generics Styles : main */
+main {
+  flex-direction: column;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+main h2 {
+  margin-bottom: 24px;
+}
+
+/* Generics Styles : footer */
+footer {
+  flex-direction: column;
+  margin: 26px 25px 36px;
+}
+
+
+
+
+
+
+
+/* Template : favorite restaurant */
+.favorite {}
+
+/* Template : .main */
+.main {}
+
+/* Template : header */
+header {}
+
+/* Template : form */
+form {}
+
+/* Template : .explore */
+.explore {}
+
+/* Template : .howTo */
+.howTo {}
+
+/* Template : main */
+main {}
+
+/* Template : footer */
+footer {}
