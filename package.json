@@ -1,0 +1,19 @@
+{
+  "name": "oc---dynamisez-une-page-web-avec-des-animations-css",
+  "version": "1.0.0",
+  "description": "An Openclassrooms course.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flesage-000/OC---Dynamisez-une-page-web-avec-des-animations-CSS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flesage-000/OC---Dynamisez-une-page-web-avec-des-animations-CSS/issues"
+  },
+  "homepage": "https://github.com/flesage-000/OC---Dynamisez-une-page-web-avec-des-animations-CSS#readme"
+}
