@@ -110,6 +110,13 @@ header {
   justify-content: center;
 
   padding: 22px 0 7px;
+  position: relative;
+}
+header button {
+  position: absolute;
+  top: 50%;
+  left: 22px;
+  transform: translateY(-35%);
 }
 
 /* Generics Styles : form */
@@ -128,18 +135,18 @@ form input[type="search"] {
 
 /* Generics Styles : .explore */
 .explore {
-  padding-top: 42px;
-  padding-bottom: 42px;
+  padding-top: 39px;
+  padding-bottom: 44px;
 }
 .explore h2 {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 .explore p {
-  margin-bottom: 32px;
+  margin-bottom: 29px;
 }
 .explore button {
   margin-bottom: 13px;
-  padding: 18px 22px;
+  padding: 14px 23px 16px;
 }
 
 /* Generics Styles : .howTo */
@@ -220,6 +227,18 @@ footer li i:before {
   transform: translate(-50%, -50%);
 }
 
+/* Generics Styles : Menu page */
+.menu main {
+  position: relative;
+}
+.menu .illustration {
+  height: 255px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
 
 
 
@@ -234,6 +253,7 @@ footer li i:before {
 .tpl h2 {
   font-size: 24px;
   font-weight: 700;
+  line-height: 1.12;
 }
 .tpl .title-special {
   font-family: 'Shrikhand', cursive;
@@ -289,6 +309,9 @@ footer li i:before {
 .tpl .main {}
 
 /* Template : header */
+.tpl header button {
+  font-size: 22px;
+}
 .tpl header svg {
   fill: var(--clr-light-black);
 }
@@ -308,8 +331,9 @@ footer li i:before {
   text-align: center;
 }
 .tpl .explore p {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 300;
+  line-height: 1.22;
 }
 .tpl .explore button {
   background-color: var(--clr-primary);
@@ -370,15 +394,15 @@ footer li i:before {
 }
 
 /* Template : restaurants */
-.card.la-palette-du-gout .illustration {
+.la-palette-du-gout .illustration {
   background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg)
 }
-.card.la-note-enchantee .illustration {
+.la-note-enchantee .illustration {
   background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg)
 }
-.card.a-la-francaise .illustration {
+.a-la-francaise .illustration {
   background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg)
 }
-.card.le-delice-des-sens .illustration {
+.le-delice-des-sens .illustration {
   background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg)
 }
