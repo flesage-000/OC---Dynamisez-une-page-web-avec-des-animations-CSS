@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/flesage-000/OC---Dynamisez-une-page-web-avec-des-animations-CSS/issues"
   },
-  "homepage": "https://github.com/flesage-000/OC---Dynamisez-une-page-web-avec-des-animations-CSS#readme"
+  "homepage": "https://github.com/flesage-000/OC---Dynamisez-une-page-web-avec-des-animations-CSS#readme",
+  "dependencies": {
+    "the-new-css-reset": "^1.5.1"
+  }
 }

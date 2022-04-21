@@ -1,0 +1,20 @@
+@charset 'utf-8';
+
+.favorite {}
+.favorite [class*="fa-"] {
+  display: none;
+}
+.favorite input {}
+
+.favorite input:checked ~ .fa-solid,
+.favorite:hover input:not(:checked) ~ .fa-solid,
+.favorite input:not(:checked) ~ .fa-regular {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.favorite:hover input:not(:checked) ~ .fa-regular {
+  display: none;
+}

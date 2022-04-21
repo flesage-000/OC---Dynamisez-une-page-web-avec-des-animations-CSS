@@ -19,66 +19,9 @@
 }
 
 /* Generics Styles : window + body */
-html,
-body {
-  height: 100%;
-  min-height: 100%;
-}
 
-.card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.card-list .card {}
-.card-list .illustration {
-  height: 175px;
-  position: relative;
-}
-.card-list .illustration span {
-  display: none;
-}
-.card-list .isNew .illustration span {
-  display: inline-block;
-  padding: 10px;
-  position: absolute;
-  top: 15px;
-  right: 10px;
-}
-.card-list .description {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-.card-list .description .text {
-  flex: 0 0 calc(100% - 75px);
-
-  padding: 16px 12px;
-}
-.card-list .description .favorite {
-  flex: 1 0 75px;
-  position: relative;
-}
 
 /* Generics Styles : favorite restaurant */
-.favorite {}
-.favorite [class*="fa-"] {
-  display: none;
-}
-.favorite input {}
-
-.favorite input:checked ~ .fa-solid,
-.favorite:hover input:not(:checked) ~ .fa-solid,
-.favorite input:not(:checked) ~ .fa-regular {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-.favorite:hover input:not(:checked) ~ .fa-regular {
-  display: none;
-}
 
 /* Generics Styles :  */
 .main,
@@ -90,153 +33,22 @@ footer {
   display: flex;
   flex-wrap: nowrap;
 }
-header,
-.explore,
-.howTo,
-main {
-  padding-right: 20px;
-  padding-left: 20px;
-}
 
 /* Generics Styles : .main */
-.main {
-  flex-direction: column;
-}
 
 /* Generics Styles : header */
-header {
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-
-  padding: 22px 0 7px;
-  position: relative;
-}
-header button {
-  position: absolute;
-  top: 50%;
-  left: 22px;
-  transform: translateY(-35%);
-}
 
 /* Generics Styles : form */
-form {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-}
-form i {
-  margin: 0 18px;
-}
-form input[type="search"] {
-  width: 50%;
-}
 
 /* Generics Styles : .explore */
-.explore {
-  padding-top: 39px;
-  padding-bottom: 44px;
-}
-.explore h2 {
-  margin-bottom: 12px;
-}
-.explore p {
-  margin-bottom: 29px;
-}
-.explore button {
-  margin-bottom: 13px;
-  padding: 14px 23px 16px;
-}
 
 /* Generics Styles : .howTo */
-.howTo {
-  padding-top: 53px;
-  padding-bottom: 46px;
-  flex-direction: column;
-  align-items: stretch;
-  counter-reset: li;
-}
-.howTo h2 {
-  margin-bottom: 27px;
-}
-.howTo li:not(:last-child) {
-  margin-bottom: 20px;
-}
-.howTo li {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  padding-bottom: 22px;
-  height: 75px;
-  gap: 30px;
-  padding: 0 33px;
-  position: relative;
-}
-.howTo li:before {
-  position: absolute;
-  counter-increment: li;
-  content: counter(li);
-  height: 24px;
-  width: 24px;
-  left: -5px;
-}
-.howTo i {
-  /* flex: 1 1 75px; */
-}
-.howTo span {
-  /* flex: 0 1 100%; */
-}
 
 /* Generics Styles : main */
-main {
-  flex-direction: column;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-main h2 {
-  margin-bottom: 24px;
-}
 
 /* Generics Styles : footer */
-footer {
-  flex-direction: column;
-  padding: 25px;
-}
-footer h5 {
-  margin-bottom: 20px;
-}
-footer li {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-footer li:not(:last-child) {
-  margin-bottom: 8px;
-}
-footer li i {
-  flex: 0 0 25px;
-  position: relative;
-}
-footer li i:before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 /* Generics Styles : Menu page */
-.menu main {
-  position: relative;
-}
-.menu .illustration {
-  height: 255px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 
 
@@ -264,7 +76,8 @@ footer li i:before {
 }
 .tpl .favorite,
 .tpl label,
-.tpl button {
+.tpl button,
+.tpl a {
   cursor: pointer;
 }
 /* Template : card */
@@ -309,7 +122,7 @@ footer li i:before {
 .tpl .main {}
 
 /* Template : header */
-.tpl header button {
+.tpl header a {
   font-size: 22px;
 }
 .tpl header svg {

@@ -1,0 +1,17 @@
+@charset 'utf-8';
+
+header {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 22px $page-padding-right 7px $page-padding-left;
+
+  position: relative;
+}
+header a {
+  position: absolute;
+  top: 50%;
+  left: 22px;
+  transform: translateY(-35%);
+}

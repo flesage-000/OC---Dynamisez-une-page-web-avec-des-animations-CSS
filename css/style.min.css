@@ -1,77 +1,214 @@
-/***
-    The new CSS reset - version 1.5.1 (last updated 1.3.2022)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
- */
-*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-  all: unset;
-  display: revert;
+@import '../node_modules/the-new-css-reset/css/reset.css';
+html,
+body {
+  height: 100%;
+  min-height: 100%;
 }
 
-/* Preferred box-sizing value */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+header {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px 20px 7px 20px;
+  position: relative;
 }
 
-/* Reapply the pointer cursor for anchor tags */
-a, button {
-  cursor: revert;
+header a {
+  position: absolute;
+  top: 50%;
+  left: 22px;
+  transform: translateY(-35%);
 }
 
-/* Remove list styles (bullets/numbers) */
-ol, ul, menu {
-  list-style: none;
+main {
+  flex-direction: column;
+  padding: 60px 20px 60px 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
-/* For images to not be able to exceed their container */
-img {
-  max-width: 100%;
+main h2 {
+  margin-bottom: 24px;
 }
 
-/* removes spacing between cells in tables */
-table {
-  border-collapse: collapse;
+footer {
+  flex-direction: column;
+  padding: 25px;
 }
 
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-  white-space: revert;
+footer h5 {
+  margin-bottom: 20px;
 }
 
-/* minimum style to allow to style meter element */
-meter {
-  -webkit-appearance: revert;
-  appearance: revert;
+footer li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
-/* reset default text opacity of input placeholder */
-::placeholder {
-  color: unset;
+footer li:not(:last-child) {
+  margin-bottom: 8px;
 }
 
-/* fix the feature of 'hidden' attribute.
- display:revert; revert to element instead of attribute */
-:where([hidden]) {
+footer li i {
+  flex: 0 0 25px;
+  position: relative;
+}
+
+footer li i:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-list .illustration {
+  height: 175px;
+  position: relative;
+}
+
+.card-list .illustration span {
   display: none;
 }
 
-/* revert for bug in Chromium browsers
- - fix for the content editable attribute will work properly. */
-:where([contenteditable]) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
+.card-list .isNew .illustration span {
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
 }
 
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable=true]) {
-  -webkit-user-drag: element;
+.card-list .description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.card-list .description .text {
+  flex: 0 0 calc(100% - 75px);
+  padding: 16px 12px;
+}
+
+.card-list .description .favorite {
+  flex: 1 0 75px;
+  position: relative;
+}
+
+.favorite [class*=fa-] {
+  display: none;
+}
+
+.favorite input:checked ~ .fa-solid,
+.favorite:hover input:not(:checked) ~ .fa-solid,
+.favorite input:not(:checked) ~ .fa-regular {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.favorite:hover input:not(:checked) ~ .fa-regular {
+  display: none;
+}
+
+form {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+form i {
+  margin: 0 18px;
+}
+
+form input[type=search] {
+  width: 50%;
+}
+
+.explore {
+  padding: 39px 20px 44px 20px;
+}
+
+.explore h2 {
+  margin-bottom: 12px;
+}
+
+.explore p {
+  margin-bottom: 29px;
+}
+
+.explore button {
+  margin-bottom: 13px;
+  padding: 14px 23px 16px;
+}
+
+.howTo {
+  padding: 53px 20px 46px 20px;
+  flex-direction: column;
+  align-items: stretch;
+  counter-reset: li;
+}
+
+.howTo h2 {
+  margin-bottom: 27px;
+}
+
+.howTo li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.howTo li {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding-bottom: 22px;
+  height: 75px;
+  gap: 30px;
+  padding: 0 33px;
+  position: relative;
+}
+
+.howTo li:before {
+  position: absolute;
+  counter-increment: li;
+  content: counter(li);
+  height: 24px;
+  width: 24px;
+  left: -5px;
+}
+
+.howTo i {
+  /* flex: 1 1 75px; */
+}
+
+.howTo span {
+  /* flex: 0 1 100%; */
+}
+
+.main {
+  flex-direction: column;
+}
+
+.menu main {
+  position: relative;
+}
+
+.menu .illustration {
+  height: 255px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /*# sourceMappingURL=style.min.css.map */

@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+main {
+  flex-direction: column;
+  padding: 60px $page-padding-right 60px $page-padding-left;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+main h2 {
+  margin-bottom: 24px;
+}
