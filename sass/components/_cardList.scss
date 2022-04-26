@@ -1,8 +1,6 @@
 @charset 'utf-8';
 
 .card-list {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 }
 .card-list .card {}
@@ -15,16 +13,12 @@
 }
 .card-list .isNew .illustration span {
   display: inline-block;
-  padding: 10px;
+  padding: 5px 10px;
   position: absolute;
   top: 15px;
   right: 10px;
 }
-.card-list .description {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
+.card-list .description {}
 .card-list .description .text {
   flex: 0 0 calc(100% - 75px);
 

@@ -1,23 +1,19 @@
 @charset 'utf-8';
 
 footer {
-  flex-direction: column;
   padding: 25px;
 }
 footer h5 {
   margin-bottom: 20px;
 }
-footer li {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
+footer li {}
 footer li:not(:last-child) {
   margin-bottom: 8px;
 }
 footer li i {
   flex: 0 0 25px;
   position: relative;
+  margin-right: 5px;
 }
 footer li i:before {
   position: absolute;

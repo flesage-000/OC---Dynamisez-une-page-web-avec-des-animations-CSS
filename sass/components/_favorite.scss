@@ -1,6 +1,9 @@
 @charset 'utf-8';
 
-.favorite {}
+.favorite {
+  flex: 1 0 75px;
+  position: relative;
+}
 .favorite [class*="fa-"] {
   display: none;
 }

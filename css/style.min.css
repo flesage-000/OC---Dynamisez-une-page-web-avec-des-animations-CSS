@@ -5,10 +5,47 @@ body {
   min-height: 100%;
 }
 
-header {
+.fx {
+  display: flex;
+}
+.fx-alignI--center {
   align-items: center;
+}
+.fx-alignI--flexS {
+  align-items: flex-start;
+}
+.fx-alignI--stretch {
+  align-items: stretch;
+}
+.fx-alignS--flexE {
+  align-self: flex-end;
+}
+.fx-dir--col {
   flex-direction: column;
+}
+.fx-dir--row {
+  flex-direction: row;
+}
+.fx-justifyC--center {
   justify-content: center;
+}
+.fx-justifyC--spaceB {
+  justify-content: space-between;
+}
+.fx-justifyC--start {
+  justify-content: flex-start;
+}
+.fx-justifyC--stretch {
+  justify-content: stretch;
+}
+.fx-wrap--yes {
+  flex-wrap: wrap;
+}
+.fx-wrap--no {
+  flex-wrap: nowrap;
+}
+
+header {
   padding: 22px 20px 7px 20px;
   position: relative;
 }
@@ -21,29 +58,23 @@ header a {
 }
 
 main {
-  flex-direction: column;
-  padding: 60px 20px 60px 20px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding: 55px 20px 60px 20px;
 }
 
 main h2 {
   margin-bottom: 24px;
 }
 
+main > section {
+  margin-top: 30px;
+}
+
 footer {
-  flex-direction: column;
   padding: 25px;
 }
 
 footer h5 {
   margin-bottom: 20px;
-}
-
-footer li {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
 }
 
 footer li:not(:last-child) {
@@ -53,6 +84,7 @@ footer li:not(:last-child) {
 footer li i {
   flex: 0 0 25px;
   position: relative;
+  margin-right: 5px;
 }
 
 footer li i:before {
@@ -63,8 +95,6 @@ footer li i:before {
 }
 
 .card-list {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 }
 
@@ -79,16 +109,10 @@ footer li i:before {
 
 .card-list .isNew .illustration span {
   display: inline-block;
-  padding: 10px;
+  padding: 5px 10px;
   position: absolute;
   top: 15px;
   right: 10px;
-}
-
-.card-list .description {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
 }
 
 .card-list .description .text {
@@ -97,6 +121,11 @@ footer li i:before {
 }
 
 .card-list .description .favorite {
+  flex: 1 0 75px;
+  position: relative;
+}
+
+.favorite {
   flex: 1 0 75px;
   position: relative;
 }
@@ -120,9 +149,6 @@ footer li i:before {
 }
 
 form {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   height: 50px;
 }
 
@@ -153,8 +179,6 @@ form input[type=search] {
 
 .howTo {
   padding: 53px 20px 46px 20px;
-  flex-direction: column;
-  align-items: stretch;
   counter-reset: li;
 }
 
@@ -162,16 +186,15 @@ form input[type=search] {
   margin-bottom: 27px;
 }
 
+.howTo ol {
+  padding-left: 10px;
+}
+
 .howTo li:not(:last-child) {
   margin-bottom: 20px;
 }
 
 .howTo li {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
   padding-bottom: 22px;
   height: 75px;
   gap: 30px;
@@ -185,7 +208,7 @@ form input[type=search] {
   content: counter(li);
   height: 24px;
   width: 24px;
-  left: -5px;
+  left: -10px;
 }
 
 .howTo i {
@@ -204,11 +227,171 @@ form input[type=search] {
   position: relative;
 }
 
+.menu main > section {
+  margin-top: 25px;
+}
+
 .menu .illustration {
   height: 255px;
   position: absolute;
   top: 0;
+  right: 0;
   left: 0;
+  z-index: 0;
+}
+
+.menu .title {
+  margin-top: 175px;
+  position: relative;
+  z-index: 1;
+}
+
+.menu .title-special {
+  flex: 1 0 auto;
+  margin-bottom: 0;
+}
+
+.menu .favorite {
+  flex-basis: 56px;
+}
+
+.menu .title-special,
+.menu .favorite {
+  margin-top: 20px;
+}
+
+.menu h3 {
+  position: relative;
+}
+
+.menu h3:before {
+  position: absolute;
+}
+
+.menu .card-list {
+  padding-bottom: 90px;
+}
+
+.menu .card {
+  margin-top: 15px;
+  position: relative;
+}
+
+.menu .card-list {
+  position: relative;
+}
+
+.menu label p {
+  flex: 1;
+  margin: 12px 11px 7px;
+}
+
+.menu label small {
+  display: inline-block;
+  margin-top: 3px;
+}
+
+.menu label div {
+  margin: 15px 15px 15px 0;
+}
+
+.menu label i {
+  display: none;
+  width: 60px;
+}
+
+.menu label:hover i,
+.menu label input:checked + i {
+  display: block;
+  position: relative;
+}
+
+.menu label i:before {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu button {
+  padding: 17px 50px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.tpl .menu .illustration {
+  background-size: cover;
+}
+
+.tpl .menu .title:before {
+  background-color: #F6F6F6;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border-radius: 40px 40px 0 0;
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  bottom: 0;
+  left: -20px;
+  z-index: -1;
+}
+
+.tpl .menu .title-special {
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.tpl .menu h3 {
+  line-height: 32px;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.tpl .menu h3:not(:first-child) {
+  margin-top: 31px;
+}
+
+.tpl .menu h3:before {
+  content: "";
+  height: 100%;
+  width: 40px;
+  border-bottom: 3px solid #99E2D0;
+}
+
+.tpl .menu .card {
+  background-color: #FFF;
+}
+
+.tpl .carte p {
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tpl .carte small {
+  font-size: 15px;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.tpl .carte .price {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.tpl .carte i {
+  background-color: #99E2D0;
+  color: #FFF;
+  font-size: 22px;
 }
 
 /*# sourceMappingURL=style.min.css.map */
