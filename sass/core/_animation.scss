@@ -1,0 +1,154 @@
+@charset 'utf-8';
+
+@keyframes spin {
+  from  {  transform:  rotate(0deg);    }
+  to    {  transform:  rotate(360deg);  }
+}
+
+@keyframes widthCheck--in {
+  from  {  width: 0;                  }
+  to    {  width: $wth-selected-menu; }
+}
+@keyframes widthCheck--out {
+  from  {  width: $wth-selected-menu; }
+  to    {  width: 0;                  }
+}
+
+@keyframes widthText--in {
+  from  {  width: 100%;                             }
+  to    {  width: calc(100% - $wth-selected-menu);  }
+}
+@keyframes widthText--out {
+  from  {  width: calc(100% - $wth-selected-menu);  }
+  to    {  width: 100%;                             }
+}
+
+@keyframes load--in {
+  from  {   opacity: 0;
+            margin-top: 30px; }
+  to    {   opacity: 1;
+            margin-top: 15px; }
+}
+
+@keyframes bkg-gradient {
+  from  {   background-size: 100% 100%; }
+  to    {   background-size: 125% 125%; }
+}
+
+@keyframes shadow {
+  from  {  box-shadow: 0 10px 10px #e6e6e6; }
+  to    {  box-shadow: 0 10px 10px #A6A6A6; }
+}
+
+@keyframes loading {
+  from  {  transform: rotate(0deg);   }
+  to    {  transform: rotate(360deg); }
+}
+
+@keyframes loader-screen {
+  from  {   bottom: 0;
+            opacity: 1;   }
+  to    {   bottom: 100%;
+            opacity: 0; }
+}
+
+@keyframes opacity {
+  from  {   opacity: 0; }
+  to    {   opacity: 1; }
+}
+
+.tpl .animate {
+  /* loading card animation */
+  &-loading {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-name: load--in;
+    opacity: 0;
+
+    & + .animate-loading {
+      animation-duration: calc(1s + 1s);
+    }
+  }
+
+  /* tick animation */
+  &-tick.card {
+    // & input:checked,
+    &:hover input:checked {
+      & ~ span {
+        width: calc(100% - $wth-selected-menu);
+      }
+      & ~ i {
+        width: $wth-selected-menu;
+      }
+    }
+    &:hover input:not(:checked) {
+      & ~ i {
+        animation-name: widthCheck--in;
+      }
+      & ~ span {
+        animation-name: widthText--in;
+      }
+      & ~ i:before {
+        animation-duration: .5s;
+        animation-name: spin;
+      }
+    }
+    input:not(:checked) ~ i {
+      animation-name: widthCheck--out;
+    }
+    & input:not(:checked) ~  span {
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      animation-name: widthText--out;
+    }
+    input:not(:checked) ~ i {
+      width: 0;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+
+      &:before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  /* button hover animation */
+
+  /* favorite hover/click animation */
+  &-button {
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+
+    &:hover {
+      animation-name: bkg-gradient, shadow;
+    }
+  }
+
+  /* loader animation */
+  &-loader {
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-name: loader-screen;
+    i {
+      animation-duration: 1s;
+      animation-name: loading;
+
+      &:before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  /* opacity animation */
+  &-opacity:hover {
+    input:not(:checked) ~ i:before {
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-name: opacity;
+
+      opacity: 0;
+    }
+  }
+}

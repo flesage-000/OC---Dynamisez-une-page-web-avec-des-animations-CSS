@@ -1,0 +1,41 @@
+/**
+ * To display a content of a block with flexbox
+ *
+ * @param {string} $dir
+ *  The direction of flex
+ * @param {string} $wrap
+ *  The flex content is allowed to wrap (or not)
+ */
+@mixin flex($dir: column, $wrap: wrap) {
+  display: flex;
+  flex-direction: $dir;
+
+  flex-wrap: $wrap;
+}
+
+/**
+ * To center vertically AND horizontally
+ */
+@mixin centering-vh--before {
+  position: relative;
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+/**
+ * To ellipsis sentences
+ */
+@mixin ellipse {
+  flex: 1;
+  min-width: 0;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

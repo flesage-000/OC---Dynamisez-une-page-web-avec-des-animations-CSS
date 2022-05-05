@@ -1,154 +1,101 @@
 @charset 'utf-8';
 
 .menu main {
+  @include flex;
+
   position: relative;
-}
-.menu main > section {
-  margin-top: 25px;
-}
-.menu .illustration {
-  height: 255px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 0;
-}
-.menu .title {
-  margin-top: 175px;
-  position: relative;
-  z-index: 1;
-}
-.menu .title-special {
-  flex: 1 0 auto;
-  margin-bottom: 0;
-}
-.menu .favorite {
-  flex-basis: 56px;
-}
-.menu .title-special,
-.menu .favorite {
-  margin-top: 20px;
-}
-.menu h3 {
-  position: relative;
-}
-.menu h3:before {
-  position: absolute;
-}
-.menu .card-list {
-  padding-bottom: 90px;
-}
-.menu .card {
-  margin-top: 15px;
-  position: relative;
-}
-.menu .card-list {
-  position: relative;
-}
-.menu label p {
-  flex: 1;
-  margin: 12px 11px 7px;
-}
-.menu label small {
-  display: inline-block;
-  margin-top: 3px;
-}
-.menu label div {
-  margin: 15px 15px 15px 0;
-}
-.menu label i {
-  display: none;
-  width: 60px;
-}
-.menu label:hover i,
-.menu label input:checked + i {
-  display: block;
-  position: relative;
-}
-.menu label i:before {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.menu button {
-  padding: 17px 50px;
 
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
+  .illustration {
+    height: 255px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+  }
+  .title {
+    @include flex($dir: row, $wrap: nowrap);
+    align-items: flex-start;
 
+    margin-top: 185px;
+    position: relative;
 
+    z-index: 1;
+    .title-special {
+      flex: 1 0 auto;
 
+      margin-top: 20px;
+    }
+    .favorite {
+      flex-basis: 56px;
 
+      margin-top: 20px;
+    }
+  }
+  & > section {
+    margin-top: 28px;
 
+    h3 {
+      position: relative;
 
+      &:before {
+        position: absolute;
+      }
+    }
 
-.tpl .menu .illustration {
-  background-size: cover;
-}
-.tpl .menu .title:before {
-  background-color: $clr-07;
-  background-size: 100% 50%;
-  background-repeat: no-repeat;
-  border-radius: 40px 40px 0 0;
-  content: '';
-  position: absolute;
-  top: -20px;
-  right: calc(-1 * $page-padding-right);
-  bottom: 0;
-  left: calc(-1 * $page-padding-left);
+    .card-list {
+      padding-bottom: 90px;
+      position: relative;
 
-  z-index: -1;
-}
-.tpl .menu .title-special {
-  font-size: 29px;
-  font-weight: 500;
-}
-.tpl .menu h3 {
-  line-height: 32px;
-  font-size: 16px;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-.tpl .menu h3:not(:first-child) {
-  margin-top: 31px;
-}
-.tpl .menu h3:before {
-  content: '';
-  height: 100%;
-  width: 40px;
-  border-bottom: 3px solid $clr-03;
-}
-.tpl .menu .card {
-  background-color: $clr-white;
-}
-.tpl .carte p {
-  font-size: 18px;
-  font-weight: 700;
+      .card {
+        @include flex($dir: row, $wrap: nowrap);
 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.tpl .carte small {
-  font-size: 15px;
-  font-weight: 300;
+        margin-top: 15px;
+        position: relative;
 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-.tpl .carte .price {
-  font-size: 15px;
-  font-weight: 900;
-}
-.tpl .carte i {
-  background-color: $clr-03;
-  color: $clr-white;
-  font-size: 22px;
+        input:checked {
+          ~ span {
+            width: calc(100% - $wth-selected-menu);
+          }
+          & ~ i {
+            width: $wth-selected-menu;
+          }
+        }
+        p {
+          flex: 1;
+          margin: 12px 11px 7px;
+        }
+        small {
+          display: inline-block;
+          margin-top: 3px;
+        }
+        & > div,
+        & > span {
+          width: 100%;
+
+          div,
+          span {
+            margin: 15px 15px 15px 0;
+          }
+        }
+        i {
+          position: relative;
+
+          &:before {
+            position: absolute;
+            top: calc(50% - .5em);
+            left: calc($wth-selected-menu / 2 - .5em);
+          }
+        }
+      }
+    }
+    button {
+      padding: 15px 50px;
+
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
 }

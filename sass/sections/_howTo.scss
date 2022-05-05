@@ -1,36 +1,62 @@
 @charset 'utf-8';
 
 .howTo {
+  @include flex;
   padding: 53px $page-padding-right 46px $page-padding-left;
   counter-reset: li;
+
+  h2 {
+    margin-bottom: 27px;
+  }
+  ol {
+    padding-left: 10px;
+
+    li {
+      @include flex($dir: row, $wrap: nowrap);
+      align-items: center;
+      gap: 30px;
+
+      height: 75px;
+      padding: 0 33px;
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      &:before {
+        position: absolute;
+        left: -10px;
+        height: 24px;
+        width: 24px;
+
+        counter-increment: li;
+        content: counter(li);
+      }
+    }
+  }
 }
-.howTo h2 {
-  margin-bottom: 27px;
+
+@media (min-width: 768px) AND (max-width: 991px) {
+  .howTo {
+    width: 768px;
+    margin: 0 auto;
+  }
 }
-.howTo ol {
-  padding-left: 10px;
-}
-.howTo li:not(:last-child) {
-  margin-bottom: 20px;
-}
-.howTo li {
-  padding-bottom: 22px;
-  height: 75px;
-  gap: 30px;
-  padding: 0 33px;
-  position: relative;
-}
-.howTo li:before {
-  position: absolute;
-  counter-increment: li;
-  content: counter(li);
-  height: 24px;
-  width: 24px;
-  left: -10px;
-}
-.howTo i {
-  /* flex: 1 1 75px; */
-}
-.howTo span {
-  /* flex: 0 1 100%; */
+
+@media (min-width: 992px) {
+  .howTo {
+    min-width: 992px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    ol {
+      @include flex($dir: row);
+      justify-content: space-between;
+      gap: 30px;
+
+      li {
+        flex: 1 0 calc(100% / 3 - 2 * 30px);
+      }
+    }
+  }
 }

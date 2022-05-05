@@ -2,29 +2,98 @@
 
 .card-list {
   gap: 20px;
-}
-.card-list .card {}
-.card-list .illustration {
-  height: 175px;
-  position: relative;
-}
-.card-list .illustration span {
-  display: none;
-}
-.card-list .isNew .illustration span {
-  display: inline-block;
-  padding: 5px 10px;
-  position: absolute;
-  top: 15px;
-  right: 10px;
-}
-.card-list .description {}
-.card-list .description .text {
-  flex: 0 0 calc(100% - 75px);
 
-  padding: 16px 12px;
+  .card {
+    @include flex($dir: column, $wrap: nowrap);
+    justify-content: space-between;
+
+    &.isNew .illustration span {
+      display: inline-block;
+      padding: 5px 10px;
+      position: absolute;
+      top: 15px;
+      right: 10px;
+    }
+    > span {
+      @include flex($dir: row, $wrap: nowrap);
+      justify-content: space-between;
+    }
+  }
+  .illustration {
+    height: 175px;
+    position: relative;
+
+    span {
+      display: none;
+    }
+  }
+  .description {
+    @include flex($dir: row, $wrap: nowrap);
+    div {
+      flex: 0 0 calc(100% - 75px);
+
+      padding: 16px 12px;
+    }
+    label {
+      flex: 1 0 75px;
+      position: relative;
+    }
+  }
 }
-.card-list .description .favorite {
-  flex: 1 0 75px;
-  position: relative;
+
+@media (min-width: 768px) AND (max-width: 991px) {
+  header {
+    width: 768px;
+    margin: 0 auto;
+  }
+
+  main.restaurant-list .card-list {
+    @include flex($dir: row);
+    justify-content: space-between;
+    gap: 30px;
+
+    .card {
+      flex: 1 0 calc(100% / 2 - 30px);
+    }
+  }
+
+  .menu main .card-list {
+    @include flex($dir: row);
+    justify-content: space-between;
+    gap: 30px;
+
+    & > div {
+      flex: 1 0 calc(100% / 3 - 2 * 30px);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  main.restaurant-list .card-list {
+    @include flex($dir: row);
+    justify-content: space-between;
+    gap: 30px;
+
+    .card {
+      flex: 1 0;
+      width: calc(100% / 4 - 3 * 30px);
+      justify-content: start;
+    }
+  }
+
+  .menu main .card-list {
+    @include flex($dir: row);
+    justify-content: space-between;
+    gap: 30px;
+
+    & > div {
+      flex: 1 0;
+      width: calc(100% / 4 - 3 * 30px);
+    }
+  }
 }

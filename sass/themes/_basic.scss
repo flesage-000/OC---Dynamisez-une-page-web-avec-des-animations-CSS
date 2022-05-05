@@ -1,0 +1,280 @@
+@charset 'utf-8';
+
+.tpl {
+  font-family: 'Roboto', sans-serif;
+  color: $clr-black;
+
+
+  /* Template : generics */
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.12;
+  }
+  label,
+  button,
+  a {
+    cursor: pointer;
+  }
+  button {
+    background-color: $clr-01;
+    border-radius: 28px;
+    color: $clr-white;
+    font-size: 17px;
+    font-weight: 400;
+    /* Created with https://www.css-gradient.com */
+    background: #F184DC;
+    background: -webkit-linear-gradient(top left, #F184DC, #9D5ADC);
+    background: -moz-linear-gradient(top left, #F184DC, #9D5ADC);
+    background: linear-gradient(to bottom right, #F184DC, #9D5ADC);
+  }
+  .title-special {
+    font-family: 'Shrikhand', cursive;
+  }
+  .shadowed {
+    box-shadow: 0 10px 10px $clr-11;
+  }
+  .favorite {
+    font-size: 20px;
+
+    &:hover i:before,
+    input:checked ~ i:before {
+      /* Created with https://www.css-gradient.com */
+      background: #F184DC;
+      background: -webkit-linear-gradient(bottom left, #F184DC, #9D5ADC);
+      background: -moz-linear-gradient(bottom left, #F184DC, #9D5ADC);
+      background: linear-gradient(to top right, #F184DC, #9D5ADC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  /* Template : header */
+  header {
+    a {
+      font-size: 22px;
+    }
+    svg {
+      fill: $clr-light-black;
+    }
+    form {
+      background-color: $clr-04;
+      box-shadow: inset 0 5px 5px $clr-05;
+
+      input[type="search"] {
+        font-weight: 500;
+      }
+    }
+  }
+
+  /* Template : .explore */
+  .explore {
+    background-color: $clr-07;
+    text-align: center;
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.22;
+    }
+  }
+
+  /* Template : .howTo */
+  .howTo {
+
+    li {
+      background-color: $clr-07;
+      border-radius: 18px;
+
+      &:before {
+        background-color: $clr-01;
+        border-radius: 50%;
+        color: $clr-white;
+        font-size: 14px;
+        line-height: 25px;
+        text-align: center;
+      }
+      &.current {
+        background-color: $clr-10;
+
+        i {
+          color: $clr-01;
+        }
+        span {
+          font-weight: 700;
+        }
+      }
+      i {
+        color: $clr-08;
+        font-size: 18px;
+      }
+    }
+  }
+
+  /* Template : main */
+  main {
+    background-color: $clr-07;
+  }
+
+  /* Template : card */
+  .card-list {
+    .card {
+      border-radius: 19px;
+      overflow: hidden;
+
+      &.isNew .illustration span {
+        background-color: $clr-03;
+        color: $clr-09;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .illustration {
+        background-position: center;
+        background-size: cover;
+      }
+      p {
+        a {
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    /* Template generic : .carte */
+    &.carte {
+      p {
+        font-size: 18px;
+        font-weight: 700;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      small {
+        font-size: 15px;
+        font-weight: 300;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
+      i {
+        background-color: $clr-03;
+        color: $clr-white;
+        font-size: 22px;
+      }
+      .price {
+        font-size: 15px;
+        font-weight: 900;
+      }
+    }
+  }
+
+  /* Template : .menu */
+  .menu {
+    .illustration {
+      background-size: cover;
+    }
+    .title {
+      &:before {
+        background-color: $clr-07;
+        background-size: 100% 50%;
+        background-repeat: no-repeat;
+        border-radius: 40px 40px 0 0;
+        content: '';
+        position: absolute;
+        top: -20px;
+        right: calc(-1 * $page-padding-right);
+        bottom: 0;
+        left: calc(-1 * $page-padding-left);
+
+        z-index: -1;
+      }
+      h2 {
+        font-size: 29px;
+        font-weight: 500;
+      }
+    }
+    h3 {
+      line-height: 32px;
+      font-size: 16px;
+      font-weight: 300;
+      text-transform: uppercase;
+
+      &:not(:first-child) {
+        margin-top: 31px;
+      }
+      &:before {
+        content: '';
+        height: 100%;
+        width: 40px;
+        border-bottom: 3px solid $clr-03;
+      }
+    }
+    .card {
+      background-color: $clr-white;
+    }
+  }
+
+  /* loader */
+  .loader {
+    background-color: $clr-10;
+    color: $clr-01;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    i {
+      font-size: 50px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  /* Template : footer */
+  footer {
+    background-color: $clr-06;
+    color: $clr-white;
+
+    li {
+      font-size: 16px;
+
+      i {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+/* Template : restaurants */
+.la-palette-du-gout .illustration {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg)
+}
+.la-note-enchantee .illustration {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg)
+}
+.a-la-francaise .illustration {
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg)
+}
+.le-delice-des-sens .illustration {
+  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg)
+}

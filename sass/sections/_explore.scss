@@ -2,14 +2,32 @@
 
 .explore {
   padding: 39px $page-padding-right 44px $page-padding-left;
+
+  h2 {
+    margin-bottom: 12px;
+  }
+  p {
+    margin-bottom: 29px;
+  }
+  button {
+    margin-bottom: 13px;
+    padding: 14px 23px 16px;
+  }
 }
-.explore h2 {
-  margin-bottom: 12px;
+
+@media (min-width: 768px) AND (max-width: 991px) {
+  .explore {
+    width: 768px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
-.explore p {
-  margin-bottom: 29px;
-}
-.explore button {
-  margin-bottom: 13px;
-  padding: 14px 23px 16px;
+
+@media (min-width: 992px) {
+  .explore {
+    min-width: 992px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }

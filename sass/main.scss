@@ -5,6 +5,9 @@
 
 @import './abstracts/variables';
 
+@import './core/mixins';
+@import './core/animation';
+
 @import './layout/flex';
 @import './layout/header';
 @import './layout/main';
@@ -21,3 +24,5 @@
 
 @import './pages/home';
 @import './pages/menu';
+
+@import './themes/basic';

@@ -1,13 +1,15 @@
 @charset 'utf-8';
 
 .favorite {
-  flex: 1 0 75px;
+  flex: 0 0 75px;
+
   position: relative;
+
+  [class*="fa-"] {
+    display: none;
+  }
 }
-.favorite [class*="fa-"] {
-  display: none;
-}
-.favorite input {}
+// .favorite input {}
 
 .favorite input:checked ~ .fa-solid,
 .favorite:hover input:not(:checked) ~ .fa-solid,

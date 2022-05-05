@@ -5,6 +5,189 @@ body {
   min-height: 100%;
 }
 
+/**
+ * To display a content of a block with flexbox
+ *
+ * @param {string} $dir
+ *  The direction of flex
+ * @param {string} $wrap
+ *  The flex content is allowed to wrap (or not)
+ */
+/**
+ * To center vertically AND horizontally
+ */
+/**
+ * To ellipsis sentences
+ */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes widthCheck--in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+@keyframes widthCheck--out {
+  from {
+    width: 60px;
+  }
+  to {
+    width: 0;
+  }
+}
+@keyframes widthText--in {
+  from {
+    width: 100%;
+  }
+  to {
+    width: calc(100% - 60px);
+  }
+}
+@keyframes widthText--out {
+  from {
+    width: calc(100% - 60px);
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes load--in {
+  from {
+    opacity: 0;
+    margin-top: 30px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 15px;
+  }
+}
+@keyframes bkg-gradient {
+  from {
+    background-size: 100% 100%;
+  }
+  to {
+    background-size: 125% 125%;
+  }
+}
+@keyframes shadow {
+  from {
+    box-shadow: 0 10px 10px #e6e6e6;
+  }
+  to {
+    box-shadow: 0 10px 10px #A6A6A6;
+  }
+}
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-screen {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+  to {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.tpl .animate {
+  /* loading card animation */
+  /* tick animation */
+  /* button hover animation */
+  /* favorite hover/click animation */
+  /* loader animation */
+  /* opacity animation */
+}
+.tpl .animate-loading {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: load--in;
+  opacity: 0;
+}
+.tpl .animate-loading + .animate-loading {
+  animation-duration: 2s;
+}
+.tpl .animate-tick.card:hover input:checked ~ span {
+  width: calc(100% - 60px);
+}
+.tpl .animate-tick.card:hover input:checked ~ i {
+  width: 60px;
+}
+.tpl .animate-tick.card:hover input:not(:checked) ~ i {
+  animation-name: widthCheck--in;
+}
+.tpl .animate-tick.card:hover input:not(:checked) ~ span {
+  animation-name: widthText--in;
+}
+.tpl .animate-tick.card:hover input:not(:checked) ~ i:before {
+  animation-duration: 0.5s;
+  animation-name: spin;
+}
+.tpl .animate-tick.card input:not(:checked) ~ i {
+  animation-name: widthCheck--out;
+}
+.tpl .animate-tick.card input:not(:checked) ~ span {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: widthText--out;
+}
+.tpl .animate-tick.card input:not(:checked) ~ i {
+  width: 0;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+.tpl .animate-tick.card input:not(:checked) ~ i:before {
+  transform: rotate(0deg);
+}
+.tpl .animate-button {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.tpl .animate-button:hover {
+  animation-name: bkg-gradient, shadow;
+}
+.tpl .animate-loader {
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-name: loader-screen;
+}
+.tpl .animate-loader i {
+  animation-duration: 1s;
+  animation-name: loading;
+}
+.tpl .animate-loader i:before {
+  transform: rotate(0deg);
+}
+.tpl .animate-opacity:hover input:not(:checked) ~ i:before {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: opacity;
+  opacity: 0;
+}
+
 .fx {
   display: flex;
 }
@@ -45,91 +228,291 @@ body {
   flex-wrap: nowrap;
 }
 
+@media (min-width: 972px) {
+  .fx-tab {
+    display: flex;
+  }
+  .fx-tab-dir--col {
+    flex-direction: column;
+  }
+  .fx-tab-dir--row {
+    flex-direction: row;
+  }
+  .fx-tab-justifyC--center {
+    justify-content: center;
+  }
+  .fx-tab-justifyC--spaceB {
+    justify-content: space-between;
+  }
+  .fx-tab-justifyC--start {
+    justify-content: flex-start;
+  }
+  .fx-tab-justifyC--stretch {
+    justify-content: stretch;
+  }
+  .fx-tab-wrap--yes {
+    flex-wrap: wrap;
+  }
+  .fx-tab-wrap--no {
+    flex-wrap: nowrap;
+  }
+  .fx-tab-basis--50 {
+    flex-basis: 48%;
+  }
+  .fx-tab-basis--100 {
+    flex-basis: 100%;
+  }
+}
 header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+header h1 {
   padding: 22px 20px 7px 20px;
+}
+header form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+header form i {
   position: relative;
 }
-
-header a {
+header form i:before {
+  display: block;
   position: absolute;
   top: 50%;
-  left: 22px;
-  transform: translateY(-35%);
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
+.menu header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.menu header a {
+  flex-basis: 62px;
+  position: relative;
+}
+.menu header a:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.menu header h1 {
+  flex-basis: calc(100% - 62px);
+}
+
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  header h1 {
+    flex: 1 0 auto;
+    align-items: stretch;
+  }
+  header form {
+    flex: 1 0 auto;
+    height: auto;
+  }
+}
 main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 55px 20px 60px 20px;
 }
-
 main h2 {
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 }
-
-main > section {
+main section {
   margin-top: 30px;
 }
-
-footer {
-  padding: 25px;
+main.restaurant-list .card-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  main {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  main {
+    min-width: 992px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 25px;
+}
 footer h5 {
   margin-bottom: 20px;
 }
-
-footer li:not(:last-child) {
+footer ul li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+footer ul li:not(:last-child) {
   margin-bottom: 8px;
 }
-
-footer li i {
+footer ul li i {
+  position: relative;
   flex: 0 0 25px;
   position: relative;
   margin-right: 5px;
 }
-
-footer li i:before {
+footer ul li i:before {
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  h5,
+ul {
+    width: 768px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+@media (min-width: 992px) {
+  h5,
+ul {
+    min-width: 992px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
 .card-list {
   gap: 20px;
 }
-
-.card-list .illustration {
-  height: 175px;
-  position: relative;
+.card-list .card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
-
-.card-list .illustration span {
-  display: none;
-}
-
-.card-list .isNew .illustration span {
+.card-list .card.isNew .illustration span {
   display: inline-block;
   padding: 5px 10px;
   position: absolute;
   top: 15px;
   right: 10px;
 }
-
-.card-list .description .text {
+.card-list .card > span {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.card-list .illustration {
+  height: 175px;
+  position: relative;
+}
+.card-list .illustration span {
+  display: none;
+}
+.card-list .description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.card-list .description div {
   flex: 0 0 calc(100% - 75px);
   padding: 16px 12px;
 }
-
-.card-list .description .favorite {
+.card-list .description label {
   flex: 1 0 75px;
   position: relative;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    width: 768px;
+    margin: 0 auto;
+  }
+
+  main.restaurant-list .card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  main.restaurant-list .card-list .card {
+    flex: 1 0 calc(50% - 30px);
+  }
+
+  .menu main .card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .menu main .card-list > div {
+    flex: 1 0 calc(33.3333333333% - 60px);
+  }
+}
+@media (min-width: 992px) {
+  header {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  main.restaurant-list .card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  main.restaurant-list .card-list .card {
+    flex: 1 0;
+    width: calc(25% - 90px);
+    justify-content: start;
+  }
+
+  .menu main .card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .menu main .card-list > div {
+    flex: 1 0;
+    width: calc(25% - 90px);
+  }
+}
 .favorite {
-  flex: 1 0 75px;
+  flex: 0 0 75px;
   position: relative;
 }
-
 .favorite [class*=fa-] {
   display: none;
 }
@@ -151,11 +534,9 @@ footer li i:before {
 form {
   height: 50px;
 }
-
 form i {
   margin: 0 18px;
 }
-
 form input[type=search] {
   width: 50%;
 }
@@ -163,75 +544,101 @@ form input[type=search] {
 .explore {
   padding: 39px 20px 44px 20px;
 }
-
 .explore h2 {
   margin-bottom: 12px;
 }
-
 .explore p {
   margin-bottom: 29px;
 }
-
 .explore button {
   margin-bottom: 13px;
   padding: 14px 23px 16px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .explore {
+    width: 768px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  .explore {
+    min-width: 992px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 .howTo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 53px 20px 46px 20px;
   counter-reset: li;
 }
-
 .howTo h2 {
   margin-bottom: 27px;
 }
-
 .howTo ol {
   padding-left: 10px;
 }
-
-.howTo li:not(:last-child) {
-  margin-bottom: 20px;
-}
-
-.howTo li {
-  padding-bottom: 22px;
-  height: 75px;
+.howTo ol li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
   gap: 30px;
+  height: 75px;
   padding: 0 33px;
   position: relative;
 }
-
-.howTo li:before {
+.howTo ol li:not(:last-child) {
+  margin-bottom: 20px;
+}
+.howTo ol li:before {
   position: absolute;
-  counter-increment: li;
-  content: counter(li);
+  left: -10px;
   height: 24px;
   width: 24px;
-  left: -10px;
+  counter-increment: li;
+  content: counter(li);
 }
 
-.howTo i {
-  /* flex: 1 1 75px; */
+@media (min-width: 768px) and (max-width: 991px) {
+  .howTo {
+    width: 768px;
+    margin: 0 auto;
+  }
 }
-
-.howTo span {
-  /* flex: 0 1 100%; */
+@media (min-width: 992px) {
+  .howTo {
+    min-width: 992px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .howTo ol {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .howTo ol li {
+    flex: 1 0 calc(33.3333333333% - 60px);
+  }
 }
-
 .main {
   flex-direction: column;
 }
 
 .menu main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   position: relative;
 }
-
-.menu main > section {
-  margin-top: 25px;
-}
-
-.menu .illustration {
+.menu main .illustration {
   height: 255px;
   position: absolute;
   top: 0;
@@ -239,92 +646,236 @@ form input[type=search] {
   left: 0;
   z-index: 0;
 }
-
-.menu .title {
-  margin-top: 175px;
+.menu main .title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin-top: 185px;
   position: relative;
   z-index: 1;
 }
-
-.menu .title-special {
+.menu main .title .title-special {
   flex: 1 0 auto;
-  margin-bottom: 0;
-}
-
-.menu .favorite {
-  flex-basis: 56px;
-}
-
-.menu .title-special,
-.menu .favorite {
   margin-top: 20px;
 }
-
-.menu h3 {
+.menu main .title .favorite {
+  flex-basis: 56px;
+  margin-top: 20px;
+}
+.menu main > section {
+  margin-top: 28px;
+}
+.menu main > section h3 {
   position: relative;
 }
-
-.menu h3:before {
+.menu main > section h3:before {
   position: absolute;
 }
-
-.menu .card-list {
+.menu main > section .card-list {
   padding-bottom: 90px;
+  position: relative;
 }
-
-.menu .card {
+.menu main > section .card-list .card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   margin-top: 15px;
   position: relative;
 }
-
-.menu .card-list {
-  position: relative;
+.menu main > section .card-list .card input:checked ~ span {
+  width: calc(100% - 60px);
 }
-
-.menu label p {
+.menu main > section .card-list .card input:checked ~ i {
+  width: 60px;
+}
+.menu main > section .card-list .card p {
   flex: 1;
   margin: 12px 11px 7px;
 }
-
-.menu label small {
+.menu main > section .card-list .card small {
   display: inline-block;
   margin-top: 3px;
 }
-
-.menu label div {
+.menu main > section .card-list .card > div, .menu main > section .card-list .card > span {
+  width: 100%;
+}
+.menu main > section .card-list .card > div div,
+.menu main > section .card-list .card > div span, .menu main > section .card-list .card > span div,
+.menu main > section .card-list .card > span span {
   margin: 15px 15px 15px 0;
 }
-
-.menu label i {
-  display: none;
-  width: 60px;
-}
-
-.menu label:hover i,
-.menu label input:checked + i {
-  display: block;
+.menu main > section .card-list .card i {
   position: relative;
 }
-
-.menu label i:before {
+.menu main > section .card-list .card i:before {
   position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: calc(50% - 0.5em);
+  left: calc(30px - 0.5em);
 }
-
-.menu button {
-  padding: 17px 50px;
+.menu main > section button {
+  padding: 15px 50px;
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 50%;
   transform: translate(-50%, 0);
 }
 
+.tpl {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  /* Template : generics */
+  /* Template : header */
+  /* Template : .explore */
+  /* Template : .howTo */
+  /* Template : main */
+  /* Template : card */
+  /* Template : .menu */
+  /* loader */
+  /* Template : footer */
+}
+.tpl h1 {
+  text-align: center;
+}
+.tpl h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+.tpl label,
+.tpl button,
+.tpl a {
+  cursor: pointer;
+}
+.tpl button {
+  background-color: #9356DC;
+  border-radius: 28px;
+  color: #FFF;
+  font-size: 17px;
+  font-weight: 400;
+  /* Created with https://www.css-gradient.com */
+  background: #F184DC;
+  background: -webkit-linear-gradient(top left, #F184DC, #9D5ADC);
+  background: -moz-linear-gradient(top left, #F184DC, #9D5ADC);
+  background: linear-gradient(to bottom right, #F184DC, #9D5ADC);
+}
+.tpl .title-special {
+  font-family: "Shrikhand", cursive;
+}
+.tpl .shadowed {
+  box-shadow: 0 10px 10px #E6E6E6;
+}
+.tpl .favorite {
+  font-size: 20px;
+}
+.tpl .favorite:hover i:before,
+.tpl .favorite input:checked ~ i:before {
+  /* Created with https://www.css-gradient.com */
+  background: #F184DC;
+  background: -webkit-linear-gradient(bottom left, #F184DC, #9D5ADC);
+  background: -moz-linear-gradient(bottom left, #F184DC, #9D5ADC);
+  background: linear-gradient(to top right, #F184DC, #9D5ADC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tpl header a {
+  font-size: 22px;
+}
+.tpl header svg {
+  fill: #101010;
+}
+.tpl header form {
+  background-color: #EAEAEA;
+  box-shadow: inset 0 5px 5px #CFCFCF;
+}
+.tpl header form input[type=search] {
+  font-weight: 500;
+}
+.tpl .explore {
+  background-color: #F6F6F6;
+  text-align: center;
+}
+.tpl .explore p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.22;
+}
+.tpl .howTo li {
+  background-color: #F6F6F6;
+  border-radius: 18px;
+}
+.tpl .howTo li:before {
+  background-color: #9356DC;
+  border-radius: 50%;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+}
+.tpl .howTo li.current {
+  background-color: #F5EDFF;
+}
+.tpl .howTo li.current i {
+  color: #9356DC;
+}
+.tpl .howTo li.current span {
+  font-weight: 700;
+}
+.tpl .howTo li i {
+  color: #9C9C9C;
+  font-size: 18px;
+}
+.tpl main {
+  background-color: #F6F6F6;
+}
+.tpl .card-list {
+  /* Template generic : .carte */
+}
+.tpl .card-list .card {
+  border-radius: 19px;
+  overflow: hidden;
+}
+.tpl .card-list .card.isNew .illustration span {
+  background-color: #99E2D0;
+  color: #008766;
+  font-size: 14px;
+  font-weight: 500;
+}
+.tpl .card-list .card .illustration {
+  background-position: center;
+  background-size: cover;
+}
+.tpl .card-list .card p a {
+  font-size: 18px;
+  font-weight: 700;
+}
+.tpl .card-list.carte p {
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tpl .card-list.carte small {
+  font-size: 15px;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.tpl .card-list.carte i {
+  background-color: #99E2D0;
+  color: #FFF;
+  font-size: 22px;
+}
+.tpl .card-list.carte .price {
+  font-size: 15px;
+  font-weight: 900;
+}
 .tpl .menu .illustration {
   background-size: cover;
 }
-
 .tpl .menu .title:before {
   background-color: #F6F6F6;
   background-size: 100% 50%;
@@ -338,60 +889,78 @@ form input[type=search] {
   left: -20px;
   z-index: -1;
 }
-
-.tpl .menu .title-special {
+.tpl .menu .title h2 {
   font-size: 29px;
   font-weight: 500;
 }
-
 .tpl .menu h3 {
   line-height: 32px;
   font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
 }
-
 .tpl .menu h3:not(:first-child) {
   margin-top: 31px;
 }
-
 .tpl .menu h3:before {
   content: "";
   height: 100%;
   width: 40px;
   border-bottom: 3px solid #99E2D0;
 }
-
 .tpl .menu .card {
   background-color: #FFF;
 }
-
-.tpl .carte p {
-  font-size: 18px;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.tpl .loader {
+  background-color: #F5EDFF;
+  color: #9356DC;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-.tpl .carte small {
-  font-size: 15px;
-  font-weight: 300;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
+.tpl .loader i {
+  font-size: 50px;
+  position: relative;
 }
-
-.tpl .carte .price {
-  font-size: 15px;
-  font-weight: 900;
+.tpl .loader i:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-.tpl .carte i {
-  background-color: #99E2D0;
+.tpl footer {
+  background-color: #353535;
   color: #FFF;
-  font-size: 22px;
+}
+.tpl footer li {
+  font-size: 16px;
+}
+.tpl footer li i {
+  font-size: 12px;
+}
+
+/* Template : restaurants */
+.la-palette-du-gout .illustration {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.la-note-enchantee .illustration {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+
+.a-la-francaise .illustration {
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
+.le-delice-des-sens .illustration {
+  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
 
 /*# sourceMappingURL=style.min.css.map */

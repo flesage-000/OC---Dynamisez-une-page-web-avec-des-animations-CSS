@@ -59,3 +59,55 @@
     }
   }
 }
+
+@media (min-width: 972px) {
+  .fx-tab {
+    display: flex;
+
+    // Flex direction
+    &-dir {
+      &--col {
+        flex-direction: column;
+      }
+      &--row {
+        flex-direction: row;
+      }
+    }
+
+    // Flex content justifying
+    &-justifyC {
+      &--center {
+        justify-content: center;
+      }
+      &--spaceB {
+        justify-content: space-between;
+      }
+      &--start {
+        justify-content: flex-start;
+      }
+      &--stretch {
+        justify-content: stretch;
+      }
+    }
+
+    // Flex wrapping
+    &-wrap {
+      &--yes {
+        flex-wrap: wrap;
+      }
+      &--no {
+        flex-wrap: nowrap;
+      }
+    }
+
+    // Flex items basis
+    &-basis {
+      &--50 {
+        flex-basis: 48%;
+      }
+      &--100 {
+        flex-basis: 100%;
+      }
+    }
+  }
+}

@@ -1,11 +1,34 @@
 @charset 'utf-8';
 
 main {
+  @include flex;
   padding: 55px $page-padding-right 60px $page-padding-left;
+
+  h2 {
+    margin-bottom: 25px;
+  }
+  section {
+    margin-top: 30px;
+  }
+
+  &.restaurant-list {
+    .card-list {
+      @include flex($wrap: nowrap);
+    }
+  }
 }
-main h2 {
-  margin-bottom: 24px;
+
+@media (min-width: 768px) AND (max-width: 991px) {
+  main {
+    width: 768px;
+    margin: 0 auto;
+  }
 }
-main > section {
-  margin-top: 30px;
+
+@media (min-width: 992px) {
+  main {
+    min-width: 992px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
