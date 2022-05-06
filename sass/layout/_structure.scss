@@ -1,0 +1,27 @@
+@charset 'utf-8';
+
+@media (min-width: 768px) AND (max-width: 991px) {
+  header,
+  footer h5,
+  footer ul,
+  main,
+  .explore,
+  .howTo {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  header,
+  footer h5,
+  footer ul,
+  main,
+  .explore,
+  .howTo {
+    max-width: 1200px;
+    width: 100%;
+    min-width: 992px;
+    margin: 0 auto;
+  }
+}

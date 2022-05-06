@@ -36,19 +36,8 @@
   }
 }
 
-@media (min-width: 768px) AND (max-width: 991px) {
-  .howTo {
-    width: 768px;
-    margin: 0 auto;
-  }
-}
-
 @media (min-width: 992px) {
   .howTo {
-    min-width: 992px;
-    max-width: 1200px;
-    margin: 0 auto;
-
     ol {
       @include flex($dir: row);
       justify-content: space-between;

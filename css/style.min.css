@@ -331,6 +331,7 @@ main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  flex: 1;
   padding: 55px 20px 60px 20px;
 }
 main h2 {
@@ -345,19 +346,6 @@ main.restaurant-list .card-list {
   flex-wrap: nowrap;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  main {
-    width: 768px;
-    margin: 0 auto;
-  }
-}
-@media (min-width: 992px) {
-  main {
-    min-width: 992px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
 footer {
   display: flex;
   flex-direction: column;
@@ -390,21 +378,39 @@ footer ul li i:before {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  h5,
-ul {
-    width: 768px;
-    margin: 0 auto;
+  footer h5,
+footer ul {
     padding: 0 30px;
   }
 }
 @media (min-width: 992px) {
-  h5,
-ul {
-    min-width: 992px;
+  footer h5,
+footer ul {
+    padding: 0 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header,
+footer h5,
+footer ul,
+main,
+.explore,
+.howTo {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  header,
+footer h5,
+footer ul,
+main,
+.explore,
+.howTo {
     max-width: 1200px;
     width: 100%;
+    min-width: 992px;
     margin: 0 auto;
-    padding: 0 30px;
   }
 }
 .card-list {
@@ -451,11 +457,6 @@ ul {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  header {
-    width: 768px;
-    margin: 0 auto;
-  }
-
   main.restaurant-list .card-list {
     display: flex;
     flex-direction: row;
@@ -475,15 +476,13 @@ ul {
     gap: 30px;
   }
   .menu main .card-list > div {
-    flex: 1 0 calc(33.3333333333% - 60px);
+    flex: 1 0;
+  }
+  .menu main .card-list > div:not(:last-of-type) {
+    width: calc(33.3333333333% - 60px);
   }
 }
 @media (min-width: 992px) {
-  header {
-    width: 1200px;
-    margin: 0 auto;
-  }
-
   main.restaurant-list .card-list {
     display: flex;
     flex-direction: row;
@@ -495,18 +494,6 @@ ul {
     flex: 1 0;
     width: calc(25% - 90px);
     justify-content: start;
-  }
-
-  .menu main .card-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-  }
-  .menu main .card-list > div {
-    flex: 1 0;
-    width: calc(25% - 90px);
   }
 }
 .favorite {
@@ -555,21 +542,6 @@ form input[type=search] {
   padding: 14px 23px 16px;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .explore {
-    width: 768px;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-@media (min-width: 992px) {
-  .explore {
-    min-width: 992px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
 .howTo {
   display: flex;
   flex-direction: column;
@@ -605,18 +577,7 @@ form input[type=search] {
   content: counter(li);
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .howTo {
-    width: 768px;
-    margin: 0 auto;
-  }
-}
 @media (min-width: 992px) {
-  .howTo {
-    min-width: 992px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
   .howTo ol {
     display: flex;
     flex-direction: row;
@@ -629,7 +590,9 @@ form input[type=search] {
   }
 }
 .main {
+  display: flex;
   flex-direction: column;
+  min-height: 100%;
 }
 
 .menu main {
@@ -721,6 +684,19 @@ form input[type=search] {
   transform: translate(-50%, 0);
 }
 
+@media (min-width: 992px) {
+  .menu main .card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .menu main .card-list > div {
+    flex: 1 0;
+    width: calc(33.3333333333% - 60px);
+  }
+}
 .tpl {
   font-family: "Roboto", sans-serif;
   color: #000;
@@ -938,6 +914,9 @@ form input[type=search] {
 .tpl footer {
   background-color: #353535;
   color: #FFF;
+}
+.tpl footer svg {
+  fill: #FFF;
 }
 .tpl footer li {
   font-size: 16px;

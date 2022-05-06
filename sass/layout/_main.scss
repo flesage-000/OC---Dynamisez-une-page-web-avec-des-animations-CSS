@@ -2,6 +2,7 @@
 
 main {
   @include flex;
+  flex: 1;
   padding: 55px $page-padding-right 60px $page-padding-left;
 
   h2 {
@@ -15,20 +16,5 @@ main {
     .card-list {
       @include flex($wrap: nowrap);
     }
-  }
-}
-
-@media (min-width: 768px) AND (max-width: 991px) {
-  main {
-    width: 768px;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 992px) {
-  main {
-    min-width: 992px;
-    max-width: 1200px;
-    margin: 0 auto;
   }
 }

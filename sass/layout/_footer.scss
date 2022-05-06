@@ -26,21 +26,15 @@ footer {
 }
 
 @media (min-width: 768px) AND (max-width: 991px) {
-  h5,
-  ul {
-    width: 768px;
-    margin: 0 auto;
+  footer h5,
+  footer ul {
     padding: 0 30px;
   }
 }
 
 @media (min-width: 992px) {
-  h5,
-  ul {
-    min-width: 992px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
+  footer h5,
+  footer ul {
     padding: 0 30px;
   }
 }

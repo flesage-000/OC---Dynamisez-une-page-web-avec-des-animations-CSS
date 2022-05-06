@@ -99,3 +99,16 @@
     }
   }
 }
+
+@media (min-width: 992px) {
+  .menu main .card-list {
+    @include flex($dir: row);
+    justify-content: space-between;
+    gap: 30px;
+
+    & > div {
+      flex: 1 0;
+      width: calc(100% / 3 - 2 * 30px);
+    }
+  }
+}

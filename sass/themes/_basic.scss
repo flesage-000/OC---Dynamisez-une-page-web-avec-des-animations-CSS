@@ -255,6 +255,9 @@
     background-color: $clr-06;
     color: $clr-white;
 
+    svg {
+      fill: $clr-white;
+    }
     li {
       font-size: 16px;
 

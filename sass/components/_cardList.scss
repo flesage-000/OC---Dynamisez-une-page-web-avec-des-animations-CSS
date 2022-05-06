@@ -42,11 +42,6 @@
 }
 
 @media (min-width: 768px) AND (max-width: 991px) {
-  header {
-    width: 768px;
-    margin: 0 auto;
-  }
-
   main.restaurant-list .card-list {
     @include flex($dir: row);
     justify-content: space-between;
@@ -63,17 +58,16 @@
     gap: 30px;
 
     & > div {
-      flex: 1 0 calc(100% / 3 - 2 * 30px);
+      flex: 1 0;
+
+      &:not(:last-of-type) {
+        width: calc(100% / 3 - 2 * 30px);
+      }
     }
   }
 }
 
 @media (min-width: 992px) {
-  header {
-    width: 1200px;
-    margin: 0 auto;
-  }
-
   main.restaurant-list .card-list {
     @include flex($dir: row);
     justify-content: space-between;
@@ -83,17 +77,6 @@
       flex: 1 0;
       width: calc(100% / 4 - 3 * 30px);
       justify-content: start;
-    }
-  }
-
-  .menu main .card-list {
-    @include flex($dir: row);
-    justify-content: space-between;
-    gap: 30px;
-
-    & > div {
-      flex: 1 0;
-      width: calc(100% / 4 - 3 * 30px);
     }
   }
 }
