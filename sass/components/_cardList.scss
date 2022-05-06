@@ -4,19 +4,16 @@
   gap: 20px;
 
   .card {
-    @include flex($dir: column, $wrap: nowrap);
-    justify-content: space-between;
+    @include flex($dir: column, $wrap: nowrap, $justC: space-between);
 
     &.isNew .illustration span {
       display: inline-block;
       padding: 5px 10px;
-      position: absolute;
-      top: 15px;
-      right: 10px;
+
+      @include posAbs($top: 15px, $right: 10px);
     }
     > span {
-      @include flex($dir: row, $wrap: nowrap);
-      justify-content: space-between;
+      @include flex($dir: row, $wrap: nowrap, $justC: space-between);
     }
   }
   .illustration {
@@ -43,9 +40,7 @@
 
 @media (min-width: 768px) AND (max-width: 991px) {
   main.restaurant-list .card-list {
-    @include flex($dir: row);
-    justify-content: space-between;
-    gap: 30px;
+    @include flex($dir: row, $justC: space-between, $wrap: wrap, $gap: 30px);
 
     .card {
       flex: 1 0 calc(100% / 2 - 30px);
@@ -53,9 +48,7 @@
   }
 
   .menu main .card-list {
-    @include flex($dir: row);
-    justify-content: space-between;
-    gap: 30px;
+    @include flex($dir: row, $justC: space-between, $gap: 30px, $wrap: wrap);
 
     & > div {
       flex: 1 0;
@@ -63,19 +56,20 @@
       &:not(:last-of-type) {
         width: calc(100% / 3 - 2 * 30px);
       }
+
+      &:last-of-type {
+        flex: 2 0 100%;
+      }
     }
   }
 }
 
 @media (min-width: 992px) {
   main.restaurant-list .card-list {
-    @include flex($dir: row);
-    justify-content: space-between;
-    gap: 30px;
+    @include flex($dir: row, $justC: space-between, $gap: 30px);
 
     .card {
-      flex: 1 0;
-      width: calc(100% / 4 - 3 * 30px);
+      flex: 1 0 calc(100% / 4 - 3 * 30px);
       justify-content: start;
     }
   }

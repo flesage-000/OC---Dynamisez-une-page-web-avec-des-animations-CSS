@@ -1,21 +1,19 @@
 @charset 'utf-8';
 
 .menu main {
-  @include flex;
+  @include flex($dir: column);
+  flex: 1 0;
 
   position: relative;
 
   .illustration {
+    @include posAbs($top: 0, $right: 0, $bottom: 0, $left: 0);
+
     height: 255px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
     z-index: 0;
   }
   .title {
-    @include flex($dir: row, $wrap: nowrap);
-    align-items: flex-start;
+    @include flex($dir: row, $wrap: nowrap, $alignI: flex-start);
 
     margin-top: 185px;
     position: relative;
@@ -44,6 +42,8 @@
     }
 
     .card-list {
+      @include flex($dir: column, $gap: 30px);
+
       padding-bottom: 90px;
       position: relative;
 
@@ -82,9 +82,7 @@
           position: relative;
 
           &:before {
-            position: absolute;
-            top: calc(50% - .5em);
-            left: calc($wth-selected-menu / 2 - .5em);
+            @include posAbs($top: calc(50% - .5em), $left: calc($wth-selected-menu / 2 - .5em));
           }
         }
       }
@@ -100,11 +98,15 @@
   }
 }
 
+@media (min-width: 768px) AND (max-width: 991px) {
+  .menu main > section .card-list {
+    @include flex($dir: row, $gap: 30px);
+  }
+}
+
 @media (min-width: 992px) {
-  .menu main .card-list {
-    @include flex($dir: row);
-    justify-content: space-between;
-    gap: 30px;
+  .menu main > section .card-list {
+    @include flex($dir: row, $justC: space-between, $gap: 30px);
 
     & > div {
       flex: 1 0;

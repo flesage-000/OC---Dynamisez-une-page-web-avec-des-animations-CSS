@@ -5,10 +5,386 @@ body {
   min-height: 100%;
 }
 
+/**
+ * To display a content of a block with flexbox
+ *
+ * @param {string} $dir
+ *  The direction of flex
+ * @param {string} $wrap
+ *  The flex content is allowed to wrap (or not)
+ */
+/**
+ * To center vertically AND horizontally
+ */
+/**
+ * To ellipsis sentences
+ */
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes widthCheck--in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+
+@keyframes widthCheck--in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+
+@-webkit-keyframes widthCheck--out {
+  from {
+    width: 60px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes widthCheck--out {
+  from {
+    width: 60px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes widthText--in {
+  from {
+    width: 100%;
+  }
+  to {
+    width: calc(100% - $wth-selected-menu);
+  }
+}
+
+@keyframes widthText--in {
+  from {
+    width: 100%;
+  }
+  to {
+    width: calc(100% - $wth-selected-menu);
+  }
+}
+
+@-webkit-keyframes widthText--out {
+  from {
+    width: calc(100% - $wth-selected-menu);
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes widthText--out {
+  from {
+    width: calc(100% - $wth-selected-menu);
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes load--in {
+  from {
+    opacity: 0;
+    margin-top: 30px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 15px;
+  }
+}
+
+@keyframes load--in {
+  from {
+    opacity: 0;
+    margin-top: 30px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 15px;
+  }
+}
+
+@-webkit-keyframes bkg-gradient {
+  from {
+    background-size: 100% 100%;
+  }
+  to {
+    background-size: 125% 125%;
+  }
+}
+
+@keyframes bkg-gradient {
+  from {
+    background-size: 100% 100%;
+  }
+  to {
+    background-size: 125% 125%;
+  }
+}
+
+@-webkit-keyframes shadow {
+  from {
+    -webkit-box-shadow: 0 10px 10px #e6e6e6;
+            box-shadow: 0 10px 10px #e6e6e6;
+  }
+  to {
+    -webkit-box-shadow: 0 10px 10px #A6A6A6;
+            box-shadow: 0 10px 10px #A6A6A6;
+  }
+}
+
+@keyframes shadow {
+  from {
+    -webkit-box-shadow: 0 10px 10px #e6e6e6;
+            box-shadow: 0 10px 10px #e6e6e6;
+  }
+  to {
+    -webkit-box-shadow: 0 10px 10px #A6A6A6;
+            box-shadow: 0 10px 10px #A6A6A6;
+  }
+}
+
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loader-screen {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+  to {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes loader-screen {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+  to {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tpl .animate {
+  /* loading card animation */
+  /* tick animation */
+  /* button hover animation */
+  /* favorite hover/click animation */
+  /* loader animation */
+  /* opacity animation */
+}
+
+.tpl .animate-loading {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: load--in;
+          animation-name: load--in;
+  opacity: 0;
+}
+
+.tpl .animate-loading + .animate-loading {
+  -webkit-animation-duration: calc(1s + 1s);
+          animation-duration: calc(1s + 1s);
+}
+
+.tpl .animate-tick.card:hover input:checked ~ span {
+  width: calc(100% - $wth-selected-menu);
+}
+
+.tpl .animate-tick.card:hover input:checked ~ i {
+  width: 60px;
+}
+
+.tpl .animate-tick.card:hover input:not(:checked) ~ i {
+  -webkit-animation-name: widthCheck--in;
+          animation-name: widthCheck--in;
+}
+
+.tpl .animate-tick.card:hover input:not(:checked) ~ span {
+  -webkit-animation-name: widthText--in;
+          animation-name: widthText--in;
+}
+
+.tpl .animate-tick.card:hover input:not(:checked) ~ i:before {
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-name: spin;
+          animation-name: spin;
+}
+
+.tpl .animate-tick.card input:not(:checked) ~ i {
+  -webkit-animation-name: widthCheck--out;
+          animation-name: widthCheck--out;
+}
+
+.tpl .animate-tick.card input:not(:checked) ~ span {
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: widthText--out;
+          animation-name: widthText--out;
+}
+
+.tpl .animate-tick.card input:not(:checked) ~ i {
+  width: 0;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+.tpl .animate-tick.card input:not(:checked) ~ i:before {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.tpl .animate-button {
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.tpl .animate-button:hover {
+  -webkit-animation-name: bkg-gradient, shadow;
+          animation-name: bkg-gradient, shadow;
+}
+
+.tpl .animate-loader {
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: loader-screen;
+          animation-name: loader-screen;
+}
+
+.tpl .animate-loader i {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: loading;
+          animation-name: loading;
+}
+
+.tpl .animate-loader i:before {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.tpl .animate-opacity:hover input:not(:checked) ~ i:before {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  opacity: 0;
+}
+
 .fx {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.fx-alignI--center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fx-alignI--flexS {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.fx-alignI--stretch {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.fx-alignS--flexE {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .fx-dir--col {
@@ -25,6 +401,30 @@ body {
           flex-direction: row;
 }
 
+.fx-justifyC--center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fx-justifyC--spaceB {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fx-justifyC--start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.fx-justifyC--stretch {
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
 .fx-wrap--yes {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -35,80 +435,441 @@ body {
       flex-wrap: nowrap;
 }
 
-.fx-alignI--center {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+@media (min-width: 972px) {
+  .fx-tab {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .fx-tab-dir--col {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .fx-tab-dir--row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .fx-tab-justifyC--center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .fx-tab-justifyC--spaceB {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .fx-tab-justifyC--start {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .fx-tab-justifyC--stretch {
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+  }
+  .fx-tab-wrap--yes {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .fx-tab-wrap--no {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .fx-tab-basis--50 {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+  }
+  .fx-tab-basis--100 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
-.fx-alignI--stretch {
+header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-}
-
-.fx-justifyC--center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.fx-justifyC--start {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+@IF $dir {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: false;
+            flex-direction: false;
+  }
 }
 
-header {
+@IF $wrap {
+  header {
+    -ms-flex-wrap: false;
+        flex-wrap: false;
+  }
+}
+
+header h1 {
   padding: 22px 20px 7px 20px;
+}
+
+header form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@IF $dir {
+  header form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@IF $wrap {
+  header form {
+    -ms-flex-wrap: false;
+        flex-wrap: false;
+  }
+}
+
+header form i {
   position: relative;
 }
 
-header a {
+header form i:before {
+  display: block;
   position: absolute;
   top: 50%;
-  left: 22px;
-  -webkit-transform: translateY(-35%);
-          transform: translateY(-35%);
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.menu header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@IF $dir {
+  .menu header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@IF $wrap {
+  .menu header {
+    -ms-flex-wrap: false;
+        flex-wrap: false;
+  }
+}
+
+.menu header a {
+  -ms-flex-preferred-size: 62px;
+      flex-basis: 62px;
+  position: relative;
+}
+
+.menu header a:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.menu header h1 {
+  -ms-flex-preferred-size: calc(100% - 62px);
+      flex-basis: calc(100% - 62px);
+}
+
+@media (min-width: 768px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  @IF $dir {
+    header {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+    }
+  }
+  @IF $wrap {
+    header {
+      -ms-flex-wrap: false;
+          flex-wrap: false;
+    }
+  }
+  header h1 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  header form {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    height: auto;
+  }
 }
 
 main {
-  padding: 60px 20px 60px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 55px 20px 60px 20px;
+}
+
+@IF $dir {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: false;
+            flex-direction: false;
+  }
+}
+
+@IF $wrap {
+  main {
+    -ms-flex-wrap: false;
+        flex-wrap: false;
+  }
 }
 
 main h2 {
-  margin-bottom: 24px;
+  margin-bottom: 25px;
+}
+
+main section {
+  margin-top: 30px;
+}
+
+main.restaurant-list .card-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@IF $dir {
+  main.restaurant-list .card-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: false;
+            flex-direction: false;
+  }
+}
+
+@IF $wrap {
+  main.restaurant-list .card-list {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 25px;
+}
+
+@IF $dir {
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: false;
+            flex-direction: false;
+  }
+}
+
+@IF $wrap {
+  footer {
+    -ms-flex-wrap: false;
+        flex-wrap: false;
+  }
 }
 
 footer h5 {
   margin-bottom: 20px;
 }
 
-footer li:not(:last-child) {
+footer ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@IF $dir {
+  footer ul li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@IF $wrap {
+  footer ul li {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+footer ul li:not(:last-child) {
   margin-bottom: 8px;
 }
 
-footer li i {
+footer ul li i {
+  position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 25px;
           flex: 0 0 25px;
   position: relative;
+  margin-right: 5px;
 }
 
-footer li i:before {
+footer ul li i:before {
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  footer h5,
+  footer ul {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  footer h5,
+  footer ul {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  header,
+  footer h5,
+  footer ul,
+  main,
+  .explore,
+  .howTo {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  header,
+  footer h5,
+  footer ul,
+  main,
+  .explore,
+  .howTo {
+    max-width: 1200px;
+    width: 100%;
+    min-width: 992px;
+    margin: 0 auto;
+  }
 }
 
 .card-list {
   gap: 20px;
+}
+
+.card-list .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@IF $dir {
+  .card-list .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@IF $wrap {
+  .card-list .card {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.card-list .card.isNew .illustration span {
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.card-list .card > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@IF $dir {
+  .card-list .card > span {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@IF $wrap {
+  .card-list .card > span {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 .card-list .illustration {
@@ -120,32 +881,143 @@ footer li i:before {
   display: none;
 }
 
-.card-list .isNew .illustration span {
-  display: inline-block;
-  padding: 10px;
-  position: absolute;
-  top: 15px;
-  right: 10px;
+.card-list .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.card-list .description .text {
+@IF $dir {
+  .card-list .description {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@IF $wrap {
+  .card-list .description {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.card-list .description div {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(100% - 75px);
           flex: 0 0 calc(100% - 75px);
   padding: 16px 12px;
 }
 
-.card-list .description .favorite {
+.card-list .description label {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 75px;
           flex: 1 0 75px;
   position: relative;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  main.restaurant-list .card-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 30px;
+  }
+  @IF $dir {
+    main.restaurant-list .card-list {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+    }
+  }
+  @IF $wrap {
+    main.restaurant-list .card-list {
+      -ms-flex-wrap: false;
+          flex-wrap: false;
+    }
+  }
+  main.restaurant-list .card-list .card {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 calc(100% / 2 - 30px);
+            flex: 1 0 calc(100% / 2 - 30px);
+  }
+  .menu main .card-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 30px;
+  }
+  @IF $dir {
+    .menu main .card-list {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+    }
+  }
+  @IF $wrap {
+    .menu main .card-list {
+      -ms-flex-wrap: false;
+          flex-wrap: false;
+    }
+  }
+  .menu main .card-list > div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0;
+            flex: 1 0;
+  }
+  .menu main .card-list > div:not(:last-of-type) {
+    width: calc(100% / 3 - 2 * 30px);
+  }
+}
+
+@media (min-width: 992px) {
+  main.restaurant-list .card-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 30px;
+  }
+  @IF $dir {
+    main.restaurant-list .card-list {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+    }
+  }
+  @IF $wrap {
+    main.restaurant-list .card-list {
+      -ms-flex-wrap: false;
+          flex-wrap: false;
+    }
+  }
+  main.restaurant-list .card-list .card {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0;
+            flex: 1 0;
+    width: calc(100% / 4 - 3 * 30px);
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
+
 .favorite {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 75px;
-          flex: 1 0 75px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 75px;
+          flex: 0 0 75px;
   position: relative;
 }
 
@@ -198,65 +1070,613 @@ form input[type="search"] {
 }
 
 .howTo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 53px 20px 46px 20px;
   counter-reset: li;
+}
+
+@IF $dir {
+  .howTo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@IF $wrap {
+  .howTo {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .howTo h2 {
   margin-bottom: 27px;
 }
 
-.howTo li:not(:last-child) {
-  margin-bottom: 20px;
+.howTo ol {
+  padding-left: 10px;
 }
 
-.howTo li {
-  padding-bottom: 22px;
-  height: 75px;
+.howTo ol li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 30px;
+  height: 75px;
   padding: 0 33px;
   position: relative;
 }
 
-.howTo li:before {
+@IF $dir {
+  .howTo ol li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@IF $wrap {
+  .howTo ol li {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.howTo ol li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.howTo ol li:before {
   position: absolute;
-  counter-increment: li;
-  content: counter(li);
+  left: -10px;
   height: 24px;
   width: 24px;
-  left: -5px;
+  counter-increment: li;
+  content: counter(li);
 }
 
-.howTo i {
-  /* flex: 1 1 75px; */
-}
-
-.howTo span {
-  /* flex: 0 1 100%; */
+@media (min-width: 992px) {
+  .howTo ol {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 30px;
+  }
+  @IF $dir {
+    .howTo ol {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+    }
+  }
+  @IF $wrap {
+    .howTo ol {
+      -ms-flex-wrap: false;
+          flex-wrap: false;
+    }
+  }
+  .howTo ol li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 calc(100% / 3 - 2 * 30px);
+            flex: 1 0 calc(100% / 3 - 2 * 30px);
+  }
 }
 
 .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 100%;
 }
 
 .menu main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
 }
 
-.menu .illustration {
+@IF $dir {
+  .menu main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: false;
+            flex-direction: false;
+  }
+}
+
+@IF $wrap {
+  .menu main {
+    -ms-flex-wrap: false;
+        flex-wrap: false;
+  }
+}
+
+.menu main .illustration {
   height: 255px;
   position: absolute;
   top: 0;
+  right: 0;
   left: 0;
+  z-index: 0;
 }
 
-div {
-  color: red;
+.menu main .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 185px;
+  position: relative;
+  z-index: 1;
 }
 
-div {
-  background-color: red;
+@IF $dir {
+  .menu main .title {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@IF $wrap {
+  .menu main .title {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.menu main .title .title-special {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  margin-top: 20px;
+}
+
+.menu main .title .favorite {
+  -ms-flex-preferred-size: 56px;
+      flex-basis: 56px;
+  margin-top: 20px;
+}
+
+.menu main > section {
+  margin-top: 28px;
+}
+
+.menu main > section h3 {
+  position: relative;
+}
+
+.menu main > section h3:before {
+  position: absolute;
+}
+
+.menu main > section .card-list {
+  padding-bottom: 90px;
+  position: relative;
+}
+
+.menu main > section .card-list .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+  position: relative;
+}
+
+@IF $dir {
+  .menu main > section .card-list .card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@IF $wrap {
+  .menu main > section .card-list .card {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.menu main > section .card-list .card input:checked ~ span {
+  width: calc(100% - $wth-selected-menu);
+}
+
+.menu main > section .card-list .card input:checked ~ i {
+  width: 60px;
+}
+
+.menu main > section .card-list .card p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 12px 11px 7px;
+}
+
+.menu main > section .card-list .card small {
+  display: inline-block;
+  margin-top: 3px;
+}
+
+.menu main > section .card-list .card > div,
+.menu main > section .card-list .card > span {
+  width: 100%;
+}
+
+.menu main > section .card-list .card > div div,
+.menu main > section .card-list .card > div span,
+.menu main > section .card-list .card > span div,
+.menu main > section .card-list .card > span span {
+  margin: 15px 15px 15px 0;
+}
+
+.menu main > section .card-list .card i {
+  position: relative;
+}
+
+.menu main > section .card-list .card i:before {
+  position: absolute;
+  top: calc(50% - .5em);
+  left: calc($wth-selected-menu / 2 - .5em);
+}
+
+.menu main > section button {
+  padding: 15px 50px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+@media (min-width: 992px) {
+  .menu main .card-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 30px;
+  }
+  @IF $dir {
+    .menu main .card-list {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+    }
+  }
+  @IF $wrap {
+    .menu main .card-list {
+      -ms-flex-wrap: false;
+          flex-wrap: false;
+    }
+  }
+  .menu main .card-list > div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0;
+            flex: 1 0;
+    width: calc(100% / 3 - 2 * 30px);
+  }
+}
+
+.tpl {
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  /* Template : generics */
+  /* Template : header */
+  /* Template : .explore */
+  /* Template : .howTo */
+  /* Template : main */
+  /* Template : card */
+  /* Template : .menu */
+  /* loader */
+  /* Template : footer */
+}
+
+.tpl h1 {
+  text-align: center;
+}
+
+.tpl h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.tpl label,
+.tpl button,
+.tpl a {
+  cursor: pointer;
+}
+
+.tpl button {
+  background-color: #9356DC;
+  border-radius: 28px;
+  color: #FFF;
+  font-size: 17px;
+  font-weight: 400;
+  /* Created with https://www.css-gradient.com */
+  background: #F184DC;
+  background: -webkit-gradient(linear, left top, right bottom, from(#F184DC), to(#9D5ADC));
+  background: linear-gradient(to bottom right, #F184DC, #9D5ADC);
+}
+
+.tpl .title-special {
+  font-family: 'Shrikhand', cursive;
+}
+
+.tpl .shadowed {
+  -webkit-box-shadow: 0 10px 10px #E6E6E6;
+          box-shadow: 0 10px 10px #E6E6E6;
+}
+
+.tpl .favorite {
+  font-size: 20px;
+}
+
+.tpl .favorite:hover i:before,
+.tpl .favorite input:checked ~ i:before {
+  /* Created with https://www.css-gradient.com */
+  background: #F184DC;
+  background: -webkit-gradient(linear, left bottom, right top, from(#F184DC), to(#9D5ADC));
+  background: linear-gradient(to top right, #F184DC, #9D5ADC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tpl header a {
+  font-size: 22px;
+}
+
+.tpl header svg {
+  fill: #101010;
+}
+
+.tpl header form {
+  background-color: #EAEAEA;
+  -webkit-box-shadow: inset 0 5px 5px #CFCFCF;
+          box-shadow: inset 0 5px 5px #CFCFCF;
+}
+
+.tpl header form input[type="search"] {
+  font-weight: 500;
+}
+
+.tpl .explore {
+  background-color: #F6F6F6;
+  text-align: center;
+}
+
+.tpl .explore p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.22;
+}
+
+.tpl .howTo li {
+  background-color: #F6F6F6;
+  border-radius: 18px;
+}
+
+.tpl .howTo li:before {
+  background-color: #9356DC;
+  border-radius: 50%;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.tpl .howTo li.current {
+  background-color: #F5EDFF;
+}
+
+.tpl .howTo li.current i {
+  color: #9356DC;
+}
+
+.tpl .howTo li.current span {
+  font-weight: 700;
+}
+
+.tpl .howTo li i {
+  color: #9C9C9C;
+  font-size: 18px;
+}
+
+.tpl main {
+  background-color: #F6F6F6;
+}
+
+.tpl .card-list {
+  /* Template generic : .carte */
+}
+
+.tpl .card-list .card {
+  border-radius: 19px;
+  overflow: hidden;
+}
+
+.tpl .card-list .card.isNew .illustration span {
+  background-color: #99E2D0;
+  color: #008766;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tpl .card-list .card .illustration {
+  background-position: center;
+  background-size: cover;
+}
+
+.tpl .card-list .card p a {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tpl .card-list.carte p {
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tpl .card-list.carte small {
+  font-size: 15px;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.tpl .card-list.carte i {
+  background-color: #99E2D0;
+  color: #FFF;
+  font-size: 22px;
+}
+
+.tpl .card-list.carte .price {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.tpl .menu .illustration {
+  background-size: cover;
+}
+
+.tpl .menu .title:before {
+  background-color: #F6F6F6;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border-radius: 40px 40px 0 0;
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: calc(-1 * $page-padding-right);
+  bottom: 0;
+  left: calc(-1 * $page-padding-left);
+  z-index: -1;
+}
+
+.tpl .menu .title h2 {
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.tpl .menu h3 {
+  line-height: 32px;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.tpl .menu h3:not(:first-child) {
+  margin-top: 31px;
+}
+
+.tpl .menu h3:before {
+  content: '';
+  height: 100%;
+  width: 40px;
+  border-bottom: 3px solid #99E2D0;
+}
+
+.tpl .menu .card {
+  background-color: #FFF;
+}
+
+.tpl .loader {
+  background-color: #F5EDFF;
+  color: #9356DC;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tpl .loader i {
+  font-size: 50px;
+  position: relative;
+}
+
+.tpl .loader i:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.tpl footer {
+  background-color: #353535;
+  color: #FFF;
+}
+
+.tpl footer svg {
+  fill: #FFF;
+}
+
+.tpl footer li {
+  font-size: 16px;
+}
+
+.tpl footer li i {
+  font-size: 12px;
+}
+
+/* Template : restaurants */
+.la-palette-du-gout .illustration {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.la-note-enchantee .illustration {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+
+.a-la-francaise .illustration {
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
+.le-delice-des-sens .illustration {
+  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }

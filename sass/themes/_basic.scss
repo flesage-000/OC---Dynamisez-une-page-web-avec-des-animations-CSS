@@ -25,11 +25,8 @@
     color: $clr-white;
     font-size: 17px;
     font-weight: 400;
-    /* Created with https://www.css-gradient.com */
-    background: #F184DC;
-    background: -webkit-linear-gradient(top left, #F184DC, #9D5ADC);
-    background: -moz-linear-gradient(top left, #F184DC, #9D5ADC);
-    background: linear-gradient(to bottom right, #F184DC, #9D5ADC);
+
+    @include bkg-linGrad(#F184DC, #9D5ADC);
   }
   .title-special {
     font-family: 'Shrikhand', cursive;
@@ -42,11 +39,8 @@
 
     &:hover i:before,
     input:checked ~ i:before {
-      /* Created with https://www.css-gradient.com */
-      background: #F184DC;
-      background: -webkit-linear-gradient(bottom left, #F184DC, #9D5ADC);
-      background: -moz-linear-gradient(bottom left, #F184DC, #9D5ADC);
-      background: linear-gradient(to top right, #F184DC, #9D5ADC);
+      @include bkg-linGrad(#F184DC, #9D5ADC);
+
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }

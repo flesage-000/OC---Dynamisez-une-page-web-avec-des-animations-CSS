@@ -12,12 +12,33 @@ body {
  *  The direction of flex
  * @param {string} $wrap
  *  The flex content is allowed to wrap (or not)
+ * @param {string} $alignI
+ *  To align items
+ * @param {string} $justC
+ *  To justify content
+ * @param {string} $gap
+ *  To set flex gap
+ */
+/**
+ * Absolute positionning
+ *
+ * @param {string} $top
+ * To set top position
+ * @param {string} $right
+ * To set right position
+ * @param {string} $bottom
+ * To set bottom position
+ * @param {string} $left
+ * To set left position
  */
 /**
  * To center vertically AND horizontally
  */
 /**
  * To ellipsis sentences
+ */
+/**
+ * To set linear background gradient
  */
 @keyframes spin {
   from {
@@ -74,7 +95,7 @@ body {
     background-size: 100% 100%;
   }
   to {
-    background-size: 125% 125%;
+    background-size: 175% 175%;
   }
 }
 @keyframes shadow {
@@ -266,8 +287,6 @@ body {
 header {
   position: relative;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
 }
@@ -277,7 +296,6 @@ header h1 {
 header form {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
 }
 header form i {
@@ -294,7 +312,6 @@ header form i:before {
 .menu header {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 .menu header a {
@@ -316,7 +333,6 @@ header form i:before {
   header {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
   }
   header h1 {
     flex: 1 0 auto;
@@ -328,10 +344,6 @@ header form i:before {
   }
 }
 main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  flex: 1;
   padding: 55px 20px 60px 20px;
 }
 main h2 {
@@ -342,14 +354,10 @@ main section {
 }
 main.restaurant-list .card-list {
   display: flex;
-  flex-direction: column;
   flex-wrap: nowrap;
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   padding: 25px;
 }
 footer h5 {
@@ -481,18 +489,19 @@ main,
   .menu main .card-list > div:not(:last-of-type) {
     width: calc(33.3333333333% - 60px);
   }
+  .menu main .card-list > div:last-of-type {
+    flex: 2 0 100%;
+  }
 }
 @media (min-width: 992px) {
   main.restaurant-list .card-list {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px;
   }
   main.restaurant-list .card-list .card {
-    flex: 1 0;
-    width: calc(25% - 90px);
+    flex: 1 0 calc(25% - 90px);
     justify-content: start;
   }
 }
@@ -557,8 +566,6 @@ form input[type=search] {
 }
 .howTo ol li {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
   gap: 30px;
   height: 75px;
@@ -580,8 +587,6 @@ form input[type=search] {
 @media (min-width: 992px) {
   .howTo ol {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px;
   }
@@ -598,15 +603,16 @@ form input[type=search] {
 .menu main {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex: 1 0;
   position: relative;
 }
 .menu main .illustration {
-  height: 255px;
   position: absolute;
   top: 0;
   right: 0;
+  bottom: 0;
   left: 0;
+  height: 255px;
   z-index: 0;
 }
 .menu main .title {
@@ -636,6 +642,9 @@ form input[type=search] {
   position: absolute;
 }
 .menu main > section .card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   padding-bottom: 90px;
   position: relative;
 }
@@ -684,15 +693,21 @@ form input[type=search] {
   transform: translate(-50%, 0);
 }
 
-@media (min-width: 992px) {
-  .menu main .card-list {
+@media (min-width: 768px) and (max-width: 991px) {
+  .menu main > section .card-list {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .menu main > section .card-list {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     gap: 30px;
   }
-  .menu main .card-list > div {
+  .menu main > section .card-list > div {
     flex: 1 0;
     width: calc(33.3333333333% - 60px);
   }
@@ -729,7 +744,6 @@ form input[type=search] {
   color: #FFF;
   font-size: 17px;
   font-weight: 400;
-  /* Created with https://www.css-gradient.com */
   background: #F184DC;
   background: -webkit-linear-gradient(top left, #F184DC, #9D5ADC);
   background: -moz-linear-gradient(top left, #F184DC, #9D5ADC);
@@ -746,11 +760,10 @@ form input[type=search] {
 }
 .tpl .favorite:hover i:before,
 .tpl .favorite input:checked ~ i:before {
-  /* Created with https://www.css-gradient.com */
   background: #F184DC;
-  background: -webkit-linear-gradient(bottom left, #F184DC, #9D5ADC);
-  background: -moz-linear-gradient(bottom left, #F184DC, #9D5ADC);
-  background: linear-gradient(to top right, #F184DC, #9D5ADC);
+  background: -webkit-linear-gradient(top left, #F184DC, #9D5ADC);
+  background: -moz-linear-gradient(top left, #F184DC, #9D5ADC);
+  background: linear-gradient(to bottom right, #F184DC, #9D5ADC);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

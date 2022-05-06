@@ -3,17 +3,14 @@
 header {
   position: relative;
 
-  @include flex;
-  align-items: stretch;
-  justify-content: center;
+  @include flex($alignI: stretch, $justC: center);
 
   h1 {
     padding: 22px $page-padding-right 7px $page-padding-left;
   }
 
   form {
-    @include flex($dir: row);
-    justify-content: center;
+    @include flex($dir: row, $justC: center);
 
     i {
       @include centering-vh--before;
@@ -23,8 +20,7 @@ header {
 
 .menu {
   header {
-    @include flex($dir: row);
-    justify-content: space-between;
+    @include flex($dir: row, $justC: space-between);
 
     a {
       flex-basis: 62px;
