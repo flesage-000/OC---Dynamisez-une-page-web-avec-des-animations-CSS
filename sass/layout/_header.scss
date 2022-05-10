@@ -3,13 +3,17 @@
 header {
   position: relative;
 
-  @include flex($alignI: stretch, $justC: center);
+  @include flex($alignI: stretch, $justC: center, $wrap: wrap);
 
   h1 {
+    flex: 1 0 100%;
+
     padding: 22px $page-padding-right 7px $page-padding-left;
   }
 
   form {
+    flex: 1 0 100%;
+
     @include flex($dir: row, $justC: center);
 
     i {

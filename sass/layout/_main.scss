@@ -14,7 +14,7 @@ main {
 
   &.restaurant-list {
     .card-list {
-      @include flex($wrap: nowrap);
+      @include flex($wrap: wrap);
     }
   }
 }

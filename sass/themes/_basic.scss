@@ -8,6 +8,10 @@
   /* Template : generics */
   h1 {
     text-align: center;
+
+    & span {
+      display: none;
+    }
   }
   h2 {
     font-size: 24px;
@@ -28,6 +32,7 @@
 
     @include bkg-linGrad(#F184DC, #9D5ADC);
   }
+  h1,
   .title-special {
     font-family: 'Shrikhand', cursive;
   }

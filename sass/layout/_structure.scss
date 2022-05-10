@@ -2,7 +2,6 @@
 
 @media (min-width: 768px) AND (max-width: 991px) {
   header,
-  footer h5,
   footer ul,
   main,
   .explore,
@@ -10,11 +9,16 @@
     width: 768px;
     margin: 0 auto;
   }
+
+  footer h5 {
+    max-width: 768px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 @media (min-width: 992px) {
   header,
-  footer h5,
   footer ul,
   main,
   .explore,
@@ -23,5 +27,13 @@
     width: 100%;
     min-width: 992px;
     margin: 0 auto;
+  }
+
+  footer h5 {
+    max-width: 1200px;
+    width: 100%;
+    min-width: 992px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
