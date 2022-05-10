@@ -8,7 +8,9 @@
   /* Template : generics */
   h1 {
     text-align: center;
-
+  }
+  h1,
+  h5 {
     & span {
       display: none;
     }

@@ -820,7 +820,8 @@ form input[type=search] {
 .tpl h1 {
   text-align: center;
 }
-.tpl h1 span {
+.tpl h1 span,
+.tpl h5 span {
   display: none;
 }
 .tpl h2 {
