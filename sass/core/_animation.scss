@@ -96,7 +96,8 @@
     input:not(:checked) ~ i {
       animation-name: widthCheck--out;
     }
-    & input:not(:checked) ~  span {
+    & input:not(:checked) ~ span,
+    & input:not(:checked) ~ div {
       animation-duration: .5s;
       animation-fill-mode: forwards;
       animation-name: widthText--out;

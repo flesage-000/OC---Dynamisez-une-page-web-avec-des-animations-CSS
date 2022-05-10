@@ -243,7 +243,7 @@ body {
 .tpl .animate-tick.card input:not(:checked) ~ i {
   animation-name: widthCheck--out;
 }
-.tpl .animate-tick.card input:not(:checked) ~ span {
+.tpl .animate-tick.card input:not(:checked) ~ span, .tpl .animate-tick.card input:not(:checked) ~ div {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-name: widthText--out;
@@ -528,7 +528,8 @@ main,
   top: 15px;
   right: 10px;
 }
-.card-list .card > span {
+.card-list .card > span,
+.card-list .card > div {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -752,7 +753,7 @@ form input[type=search] {
 .menu main > section .card-list .card input:checked ~ i {
   width: 60px;
 }
-.menu main > section .card-list .card p {
+.menu main > section .card-list .card .menu-description {
   flex: 1;
   margin: 12px 11px 7px;
 }
@@ -764,8 +765,8 @@ form input[type=search] {
   width: 100%;
 }
 .menu main > section .card-list .card > div div,
-.menu main > section .card-list .card > div span, .menu main > section .card-list .card > span div,
-.menu main > section .card-list .card > span span {
+.menu main > section .card-list .card > div .menu-price, .menu main > section .card-list .card > span div,
+.menu main > section .card-list .card > span .menu-price {
   margin: 15px 15px 15px 0;
 }
 .menu main > section .card-list .card i {
@@ -933,7 +934,7 @@ form input[type=search] {
   font-size: 18px;
   font-weight: 700;
 }
-.tpl .card-list.carte p {
+.tpl .card-list.carte span > span {
   font-size: 18px;
   font-weight: 700;
   white-space: nowrap;

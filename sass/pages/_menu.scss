@@ -61,7 +61,7 @@
             width: $wth-selected-menu;
           }
         }
-        p {
+        .menu-description {
           flex: 1;
           margin: 12px 11px 7px;
         }
@@ -74,7 +74,7 @@
           width: 100%;
 
           div,
-          span {
+          .menu-price {
             margin: 15px 15px 15px 0;
           }
         }
