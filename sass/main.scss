@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-@import '../node_modules/the-new-css-reset/css/reset.css';
+@use '../node_modules/the-new-css-reset/css/reset.css';
 @import './core/resetPlus';
 
 @import './abstracts/variables';

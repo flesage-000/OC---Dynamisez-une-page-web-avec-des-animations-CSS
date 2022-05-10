@@ -1,14 +1,15 @@
 {
+  "liveSassCompile.settings.autoprefix": false,
+  "liveSassCompile.settings.excludeList": [
+    "/.vscode/**"
+  ],
   "liveSassCompile.settings.formats": [
-
     {
       "format": "expanded",
-      "extensionName": ".min.css",
-      "savePath": null
+      "extensionName": ".css",
+      "savePath": "/css",
+      "savePathSegmentKeys": null,
+      "savePathReplaceSegmentsWith": null
     }
-  ],
-  "liveSassCompile.settings.generateMap": false,
-  "liveSassCompile.settings.includeItems": [
-    "./sass/main.scss"
   ]
 }
