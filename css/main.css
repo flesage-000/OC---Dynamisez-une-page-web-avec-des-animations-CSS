@@ -510,6 +510,10 @@ main,
     margin-left: auto;
   }
 }
+button {
+  padding: 15px 50px;
+}
+
 .card-list {
   gap: 20px;
 }
@@ -777,7 +781,6 @@ form input[type=search] {
   left: calc(30px - 0.5em);
 }
 .menu main > section button {
-  padding: 15px 50px;
   position: absolute;
   bottom: -5px;
   left: 50%;
